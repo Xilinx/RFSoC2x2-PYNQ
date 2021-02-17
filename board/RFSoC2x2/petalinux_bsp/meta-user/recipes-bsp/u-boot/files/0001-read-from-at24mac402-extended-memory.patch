@@ -1,0 +1,43 @@
+From ad30ede7b97ebde1dd58f1807a02b4ea80259c8f Mon Sep 17 00:00:00 2001
+From: Rock Qu <yunq@xilinx.com>
+Date: Thu, 22 Oct 2020 16:22:35 -0700
+Subject: [PATCH] read from at24mac402 extended memory
+
+---
+ board/xilinx/common/board.c | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
+
+diff --git a/board/xilinx/common/board.c b/board/xilinx/common/board.c
+index 5fdd994..f91d437 100644
+--- a/board/xilinx/common/board.c
++++ b/board/xilinx/common/board.c
+@@ -16,18 +16,16 @@ int zynq_board_read_rom_ethaddr(unsigned char *ethaddr)
+ 
+ #if defined(CONFIG_ZYNQ_GEM_I2C_MAC_OFFSET)
+ 	struct udevice *dev;
+-	ofnode eeprom;
+ 
+-	eeprom = ofnode_get_chosen_node("xlnx,eeprom");
+-	if (!ofnode_valid(eeprom))
+-		return -ENODEV;
+-
+-	debug("%s: Path to EEPROM %s\n", __func__,
+-	      ofnode_get_chosen_prop("xlnx,eeprom"));
+-
+-	ret = uclass_get_device_by_ofnode(UCLASS_I2C_EEPROM, eeprom, &dev);
+-	if (ret)
++	/* 
++	 * Reading of extended memory is not supported by the driver
++	 * Use customized code to read out MAC address
++	 */
++	ret = i2c_get_chip_for_busnum(2, CONFIG_SYS_I2C_EEPROM_ADDR, 1, &dev);
++	if (ret){
++		printf("Failed to get chip for bus 2\n");
+ 		return ret;
++	}
+ 
+ 	ret = dm_i2c_read(dev, CONFIG_ZYNQ_GEM_I2C_MAC_OFFSET, ethaddr, 6);
+ 	if (ret)
+-- 
+1.8.3.1
+
