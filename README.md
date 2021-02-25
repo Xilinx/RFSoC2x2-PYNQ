@@ -1,4 +1,4 @@
-# RFSoC2x2 
+# RFSoC 2x2 
 
 View the *RFSoC 2x2 GitHub page* for this repository on [www.pynq-rfsoc.io](www.pynq-rfsoc.io).
 
