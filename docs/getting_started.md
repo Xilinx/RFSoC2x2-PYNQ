@@ -19,7 +19,7 @@ This guide will show you how to setup your computer and RFSoC 2x2 board using PY
 
 You can watch the getting started video guide or follow the instructions below. If you have any problems getting started, post a question to the [PYNQ support forum](https://discuss.pynq.io).
 
-[![RFSoC 2x2 setup video](https://img.youtube.com/vi/omyoGpY1jrc/0.jpg)](https://www.youtube.com/watch?v=omyoGpY1jrc) 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/omyoGpY1jrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Setup instructions
 
