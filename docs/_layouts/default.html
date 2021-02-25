@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <!-- Include XUP Logo on top of the sidebar-->
+        <p style="color:white; font-size: 28px;">RFSoC 2x2</p>  
+        <!--<img alt="" src="images/xup_rfsoc_pynq_logos.png" style="border: none; display: block" width="169"> 
+        -->
+        <br>
+
+
+        <!--<span style="color:white; font-size: 18px;">Navigation</span>  -->
+        <ul>
+            {% for item in site.data.navigation.docs %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <span style="color:white; font-size: 18px;">Documents</span>  
+        <ul>
+            {% for item in site.data.documents.docs %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+        
+        <span style="color:white; font-size: 18px;">Downloads</span>  
+        <ul>
+            {% for item in site.data.downloads.docs %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+      </header>
+      <section>
+        {{ content }}
+      </section>
+      
+      <footer>
+        <a class="buttons github" href="{{ site.github.repository_url }}"><b>View on GitHub</b></a>
+      </footer>
+      
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    {% if site.google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,12 @@
+docs_list_title: downloads
+docs:
+  
+- title: PYNQ image
+  url: http://www.pynq.io/board.html
+
+- title: Vivado board files
+  url: http://www.pynq.io/board.html
+  
+- title: XDC files
+  url: http://www.pynq.io/board.html
+ 
