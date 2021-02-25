@@ -22,9 +22,9 @@ There are BALUNs between the SMA connectors and the Zynq RFSoC on the board, whi
 * Micro SD card port
 * Mini Display port
 * Ethernet (RJ45)
-* Stacked 2-port USB host
+* Stacked 2-port USB 3.0 host
 * USB 3.0 Composite device (Micro USB 3.0 port)
-* UART/JTAG (Micro USB port)
+* UART/JTAG (Micro USB 2.0 port)
 * 1x User pushbutton
 * I2C power monitor
 
@@ -34,7 +34,7 @@ There are BALUNs between the SMA connectors and the Zynq RFSoC on the board, whi
 * 2x RF ADC
 * PPS clock & external reference clock
 * 4GB DDR4
-* SYZYGY port
+* SYZYGY STD port
 * 2x PMOD
 * 4x Switches, 5x User pushbuttons, 4x white user LEDs, 2x RGB LEDs   
 
