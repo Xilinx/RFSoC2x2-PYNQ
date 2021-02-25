@@ -22,47 +22,38 @@ An RFSoC frequency planning tool created using Python is available to download a
 
 The Python based frequency planner uses widgets that allow the user to dynamically change system properties. You can follow this [link to the RFSoC Frequency Planner GitHub page](https://github.com/strath-sdr/rfsoc_frequency_planner), where you can download the frequency planner tool, contribute to the project, or post questions and feedback using the issue tracker.
 
-## RFSoC Demonstration Repositories
+## RFSoC OFDM Demonstrator
 
-The [University of Strathclyde](https://sdr.eee.strath.ac.uk/) SDR research laboratory has created a series of demonstration projects for the RFSoC2x2 development board. Clicking on the links below will take you to the main GitHub page where these demonstrations are stored.
+This overlay demonstrates the implementation of an Orthogonal Frequency Division Multiplexing (OFDM) transceiver on the RFSoC 2x2 board. PYNQ is used to control the underlying modulation scheme of the OFDM sub-carriers and for visualisation of data at various stages in the transmit/receive chain, such as the received constellations.
 
-* [RFSoC OFDM Demonstrator](https://github.com/strath-sdr/rfsoc_ofdm)
-* [RFSoC QPSK Demonstrator](https://github.com/strath-sdr/rfsoc_qpsk)
-* [RFSoC BPSK Radio Demonstrator](https://github.com/strath-sdr/rfsoc_radio)
-* [PYNQ AGC Demonstration](https://github.com/strath-sdr/pynq_agc)
+![](./images/strathclyde/rfsoc_ofdm_demonstrator_500.png)
 
-You can obtain all of the above demonstrations by navigating to the [RFSoC Studio](https://github.com/strath-sdr/rfsoc_studio) repository and following the instructions provided in the readme.
+The OFDM demonstrator can transmit and receive up to 1024-QAM. You can follow this [link to the RFSoC OFDM demonstrator GitHub page](https://github.com/strath-sdr/rfsoc_ofdm), where you can download and contribute to the project, or post questions and feedback using the issue tracker.
 
-## RFSoC Introduction Notebooks
+## RFSoC QPSK Demonstrator
 
-There are a collection of RFSoC introductory notebooks specifically for your RFSoC2x2 development board. You can obtain a copy of the RFSoC introductory notebooks from the following GitHub repository, [RFSoC Notebooks](https://github.com/strath-sdr/rfsoc_notebooks).
+The QPSK demonstrator was the first University of Strathclyde RFSoC introspection system. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. PYNQ is used to visualise the data at both the RF DAC and RF ADC, as well as visualising various DSP stages throughout the transmit and receive signal path.
 
-<img src="./images/strathclyde/rfsoc_notebooks/rf_data_converters_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/rfsoc_notebooks/software_defined_radio_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/rfsoc_notebooks/rf_spectrum_400.png" width="25%"/>
+![](./images/strathclyde/rfsoc_qpsk_demonstrator_500.png)
 
-## Digital Signal Processing Notebooks
+The QPSK and PYNQ design has since been published in [IEEE Access](https://ieeexplore.ieee.org/document/9139483). You can download and contribute to the project, or post questions and feedback from the GitHub repository, [RFSoC QPSK Demonstrator](https://github.com/strath-sdr/rfsoc_qpsk).
 
-The University of Strathclyde also have a series of Digital Signal Processing for wireless communications notebooks that you may find interesting. These notebooks present introductory material for the following.
+## RFSoC BPSK Demonstrator
 
-Core Topics:
-* Sampling and Quantisation
-* The Frequency Spectrum
-* Modulation and Demodulation
-* Baseband Modulation
-* Digital Filters
+This overlay presents a BPSK transceiver radio design for RFSoC platforms. The radio is capable of transmitting and receiving BPSK modulated waveforms in loopback, or between RFSoC development boards running the same design. A simple "hello world" example is presented demonstrating that transmitted BPSK waveforms can be received, synchronised, and the payload extracted for analysis.
 
-Specialised Topics:
-* Machine Learning for Communication Systems
-* OFDM Fundamentals
+![](./images/strathclyde/rfsoc_bpsk_demonstrator_500.png)
 
-You can obtain a copy of these notebooks from the following GitHub repository, [DSP Notebooks](https://github.com/strath-sdr/dsp_notebooks).
+You can download and contribute to this project, or post questions and feedback from the GitHub repository, [RFSoC BPSK Radio Demonstrator](https://github.com/strath-sdr/rfsoc_radio).
 
-<img src="./images/strathclyde/dsp_notebooks/pulse_shaping_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/spectral_analysis_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/digital_filtering_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/modulation_demodulation_400.png" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/sampling_aliasing_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/automatic_mod_class_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/sampling_quantisation_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/ofdm_fundamentals_400.png" width="25%"/>
+## A PYNQ AGC Design
+
+This GitHub repository presents a digital Automatic Gain Control (AGC) circuit with interactive control of it's parameters. The system can generate various input signals, and allow you to explore some interesting effects of the AGC algorithm, and practice tweaking parameters for optimal performance.
+
+![](./images/strathclyde/pynq_agc_design_500.png)
+
+You can download and contribute to this project, or post questions and feedback from the GitHub repository, [PYNQ AGC Demonstration](https://github.com/strath-sdr/pynq_agc).
+
+## The RFSoC Studio Installer
+
+The [University of Strathclyde](https://sdr.eee.strath.ac.uk/) SDR research laboratory has created a series of demonstration projects for the RFSoC2x2 development board, many of these have been introduced above. You can obtain all of the above demonstrations using one installation command by navigating to the [RFSoC Studio](https://github.com/strath-sdr/rfsoc_studio) repository and following the instructions provided in the readme.
