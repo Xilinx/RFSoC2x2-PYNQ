@@ -4,9 +4,7 @@ docs:
 - title: PYNQ image
   url: http://www.pynq.io/board.html
 
-- title: Vivado board files
-  url: http://www.pynq.io/board.html
   
 - title: XDC files
-  url: http://www.pynq.io/board.html
+  url: https://github.com/Xilinx/RFSoC2x2-PYNQ/blob/master/board/RFSoC2x2/base/vivado/constraints/base.xdc
  
