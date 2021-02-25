@@ -59,17 +59,10 @@ Specialised Topics:
 You can obtain a copy of these notebooks from the following GitHub repository, [DSP Notebooks](https://github.com/strath-sdr/dsp_notebooks).
 
 <img src="./images/strathclyde/dsp_notebooks/pulse_shaping_400.png" align="left" width="25%"/>
-
 <img src="./images/strathclyde/dsp_notebooks/spectral_analysis_400.png" align="left" width="25%"/>
-
 <img src="./images/strathclyde/dsp_notebooks/digital_filtering_400.png" align="left" width="25%"/>
-
 <img src="./images/strathclyde/dsp_notebooks/Modulation_demodulation_400.png" width="25%"/>
-
 <img src="./images/strathclyde/dsp_notebooks/sampling_aliasing_400.png" align="left" width="25%"/>
-
 <img src="./images/strathclyde/dsp_notebooks/automatic_mod_class_400.png" align="left" width="25%"/>
-
 <img src="./images/strathclyde/dsp_notebooks/sampling_quantisation_400.png" align="left" width="25%"/>
-
 <img src="./images/strathclyde/dsp_notebooks/ofdm_fundamentals_400.png" width="25%"/>
