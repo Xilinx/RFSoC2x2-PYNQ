@@ -1,11 +1,13 @@
-# RFSoC2x2 Board Repository
+# RFSoC2x2 
 
-This repository holds various board collateral for the RFSoC2x2 board.
-This repository is compatible with PYNQ v2.6.0 and later.
+View the *RFSoC 2x2 GitHub page* for this repository on [www.pynq-rfsoc.io](www.pynq-rfsoc.io).
+
+This repository is used to host the *GitHub Documentation Page* for the RFSoC2x2 board, and also includes board collateral including sources for the RFSoC 2x2 *base* design. 
+This design files in this repository are compatible with PYNQ v2.6.0 and later.
 
 ![alt](./rfsoc2x2.png)
 
-## Steps to rebuild SD image
+## Steps to rebuild SD image (Linux)
 
 1. First choose a location to clone this repository:
 
@@ -36,7 +38,7 @@ This repository is compatible with PYNQ v2.6.0 and later.
 	make BOARDDIR=$RFSoC2x2_REPO
 	```
 
-## Steps to rebuild base overlay
+## Steps to rebuild base overlay (Linux)
 
 Go to the base overlay folder and run make:
 
