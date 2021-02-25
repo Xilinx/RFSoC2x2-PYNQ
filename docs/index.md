@@ -26,7 +26,7 @@ For more details on the RFSoC 2x2 hardware, see the [Board Overview](overview.md
 
 If you already have a board, go to the [RFSoC 2x2 Getting Started](./getting_started.md) guide. The getting started guide includes instructions and a video showing you how to setup your board to run PYNQ. 
 
-See the [XUP RFSoC 2x2 page]([www.xilinx.com/support/university/boards-portfolio/xup-boards/RFSoC2x2.html](http://www.xilinx.com/support/university/boards-portfolio/xup-boards/RFSoC2x2.html)) for details on how to purchase a RFSoC 2x2
+See the [XUP RFSoC 2x2 page](http://www.xilinx.com/support/university/boards-portfolio/xup-boards/RFSoC2x2.html) for details on how to purchase a RFSoC 2x2
 
 ## RFSoC 2x2 overlays
 
