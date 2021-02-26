@@ -14,7 +14,7 @@ You can also check for other RFSoC 2x2 projects, and post your own in the [Commu
 
 Questions related to Xilinx tools and building designs for your board, including HLS design, can be posted on the Xilinx technical support forums:
 
-* [Xilixn Support Forum](https://forums.xilinx.com)
+* [Xilinx Support Forum](https://forums.xilinx.com)
 
 
 

@@ -8,7 +8,7 @@ See the  [RFSoC 2x2 base overlay](./base_overlay.html) page for more details.
 
 ## Spectrum Analyzer
 
-An RFSoC spectrum analysis tool is available on your RFSoC2x2 from the first time you start your board. The spectrum analyzer was developed by the [University of Strathclyde](https://sdr.eee.strath.ac.uk/) Software Defined Radio (SDR) research laboratory. You can use the spectrum analyzer tool to explore your surrounding RF spectrum.
+An RFSoC spectrum analysis tool is available on your RFSoC 2x2 from the first time you start your board. The spectrum analyzer was developed by the [University of Strathclyde](https://sdr.eee.strath.ac.uk/) Software Defined Radio (SDR) research laboratory. You can use the spectrum analyzer tool to explore your surrounding RF spectrum.
 
 ![](./images/strathclyde/rfsoc_spectrum_analyser_500.png)
 
@@ -16,7 +16,7 @@ You can follow this [link to the RFSoC Spectrum Analyzer GitHub page](https://gi
 
 ## RFSoC Frequency Planner
 
-An RFSoC frequency planning tool created using Python is available to download and install on your RFSoC2x2 development board. This frequency planning tool is based on the original RFSoC frequency planner that can be downloaded [here](https://www.xilinx.com/publications/products/tools/zynq-ultrascale-plus-rfsoc-frequency-planner-rev1p7.xlsx.zip).
+An RFSoC frequency planning tool created using Python is available to download and install on your RFSoC 2x2 development board. This frequency planning tool is based on the original RFSoC frequency planner that can be downloaded [here](https://www.xilinx.com/publications/products/tools/zynq-ultrascale-plus-rfsoc-frequency-planner-rev1p7.xlsx.zip).
 
 ![](./images/strathclyde/rfsoc_frequency_planner_600.png)
 
