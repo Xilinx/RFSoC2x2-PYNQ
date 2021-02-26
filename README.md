@@ -5,7 +5,7 @@ View the *RFSoC 2x2 GitHub page* for this repository on [www.rfsoc-pynq.io](http
 This repository is used to host the *GitHub Documentation Page* for the RFSoC2x2 board, and also includes board collateral including sources for the RFSoC 2x2 *base* design. 
 This design files in this repository are compatible with PYNQ v2.6.0 and later.
 
-![alt](./rfsoc2x2.png)
+![alt](./docs/images/01_rfsoc_2x2_t.png)
 
 ## Steps to rebuild SD image (Linux)
 
