@@ -48,7 +48,7 @@ The three notebooks are numbered, and you should try run them in order:
 </tr>
 </table>
 
-The notebooks cover an introduction to the RF Data Converters (RF DCs) on the RFSoC2x2 board, RF board setup and a tutorial on inspecting and manipulating captured RF ADC data, and creating a Spectrum plot in PYNQ and how to perform a spectrum sweep. 
+The notebooks cover an introduction to the RF Data Converters (RF DCs) on the RFSoC 2x2 board, RF board setup and a tutorial on inspecting and manipulating captured RF ADC data, and creating a Spectrum plot in PYNQ and how to perform a spectrum sweep. 
 
 #### Board notebooks
 
