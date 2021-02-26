@@ -26,6 +26,8 @@ Recommendations:
 
 ### SD Card
 
+A 16 GB SD card is included with the kit. 
+
 If you need to make a new PYNQ image, the recommended Micro SD card size for PYNQ is 8GB. We recommend you use a 16GB or greater *branded/high quality* SD card. A larger capacity card will allow you to install more packages and overlays and save more data to the card. 
 
 A branded card, or a higher quality card is likely to be more reliable and higher speed cards will be faster to burn, and may give some (modest) performance increase when using your board. 

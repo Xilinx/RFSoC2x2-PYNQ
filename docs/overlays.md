@@ -61,7 +61,7 @@ You can obtain a copy of these notebooks from the following GitHub repository, [
 <img src="./images/strathclyde/dsp_notebooks/pulse_shaping_400.png" align="left" width="25%"/>
 <img src="./images/strathclyde/dsp_notebooks/spectral_analysis_400.png" align="left" width="25%"/>
 <img src="./images/strathclyde/dsp_notebooks/digital_filtering_400.png" align="left" width="25%"/>
-<img src="./images/strathclyde/dsp_notebooks/Modulation_demodulation_400.png" width="25%"/>
+<img src="./images/strathclyde/dsp_notebooks/modulation_demodulation_400.png" width="25%"/>
 <img src="./images/strathclyde/dsp_notebooks/sampling_aliasing_400.png" align="left" width="25%"/>
 <img src="./images/strathclyde/dsp_notebooks/automatic_mod_class_400.png" align="left" width="25%"/>
 <img src="./images/strathclyde/dsp_notebooks/sampling_quantisation_400.png" align="left" width="25%"/>
