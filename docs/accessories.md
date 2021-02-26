@@ -3,23 +3,58 @@
 The RFSoC comes with a Micro SD card, a Micro USB 3.0 cable, a power supply and two SMA cables. Other optional accessories can be used with the RFSoC 2x2 including RF antennas, filters and amplifiers as described below. 
 
 
-
 ## Recommended RF accessories
 
 ### Antenna
 
-Recommendations:
+When selecting an antenna, be aware of its operational frequency range and the requirements of the target application. Below, are off-the-shelf suggestions of antennas you can use with your RFSoC2x2 development board.
 
+* [ANT500 Telescopic Antenna](https://www.nooelec.com/store/sdr/sdr-addons/antennas/ant500.html)
+    * Brand: NooElec
+    * Frequency Range: 75 MHz to 1 GHz
+    * Style: Tilt / Swivel, Telescopic
+    * Applications: AM/FM Radio
 
+* [ANT-2.4-LCW-SMA](https://linxtechnologies.com/wp/product/lcw-series-low-cost-2-4ghz-dipole-antenna/)
+    * Brand: Linx Technologies
+    * Frequency Range: 2400 MHz to 2500 MHz
+    * Style: Tilt / Swivel
+    * Applications: WiFi, Bluetooth&trade;, ZigBee&trade;, Thread&trade;
 
 ### Filters
 
+There are a wide range of filters available for the RFSoC. The primary purpose of external filtering is to suppress unwanted signals and extract your band of interest. When selecting a filter, you should also consider the RFSoC's Nyquist Zone properties, and ensure that your filter attenuates neighbouring zones as required by your target application.
 
+* [Mini-Circuits VLF-1800+](https://www.mouser.co.uk/ProductDetail/Mini-Circuits/VLF-1800%2b?qs=xZ%2FP%252Ba9zWqZiMerIBdUJuQ%3D%3D)
+    * Brand: Mini-Circuits
+    * Frequency Range: DC to 1800 MHz
+    * Type: Low Pass Filter
+    * Applications: Suitable for suppressing Nyquist Zone 2 on your RFSoC2x2 development board (when an RF Data Converter's sample rate is ≥ 3600 Msps)
+
+* [Mini-Circuits VBF-2435+](https://www.mouser.co.uk/ProductDetail/Mini-Circuits/VBF-2435+/?qs=xZ%2FP%2Ba9zWqZjJLm3iKqs2g==)
+    * Brand: Mini-Circuits
+    * Frequency Range: 2340 MHz to 2530 MHz
+    * Type: Band Pass Filter
+    * Applications: WiFi
 
 ### Amplifiers
 
+Signal amplification should be applied carefully to your RFSoC development board. If you are unsure on how to approach signal amplification, please seek professional support, as you may damage your RFSoC development board. Some amplifiers should be cascaded with appropriate attenuation to prevent overvoltage, see [Attenuators](#attenuators) below.
 
+* [VeGA Barebones](https://www.nooelec.com/store/vega-barebones.html)
+    * Brand: NooElec
+    * Frequency Range: 30 MHz to 4000 MHz
+    * Type: Low-Noise Variable Gain Amplifier
+    * Control: Manual using digital switches and analogue pot
 
+### Attenuators <a class="anchor" id="attenuators"></a>
+
+You should attenuate your input signal if you are using the VeGA amplifier on the RF ADC front-end. NooElec provide an SMA attenuator kit that will interface to the VeGA and RFSoC2x2 development board. We suggest connecting an attenuator of -14dB at the output of the VeGA amplifier (before the RFSoC2x2 RF ADC input). This will convert the output 5V signal to 1V, suitable for the RFSoC2x2.
+
+* [SMA Attenuator Kit](https://www.nooelec.com/store/sdr/sdr-addons/attenuators/attenuator-bundle.html)
+    * Brand: NooElec
+    * Frequency Range: DC - 6 GHz
+    * Attenutation Range: 1 dB to 42 dB
 
 
 ## Included accessories
