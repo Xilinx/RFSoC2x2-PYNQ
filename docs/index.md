@@ -4,9 +4,9 @@ layout: default
 
 # RFSoC 2x2 kit
 
-Xilinx’s Radio Frequency System-on-Chip ([RFSoC](https://www.xilinx.com/products/silicon-devices/soc/rfsoc.html)) devices have created a new class of integrated circuit architecture for the communications and instrumentation markets. RFSoCs combine high-accuracy ADCs- and DACs operating at Giga-samples per second, with programmable heterogeneous compute engines.
+Xilinx’s Radio Frequency System-on-Chip ([RFSoC](https://www.xilinx.com/products/silicon-devices/soc/rfsoc.html)) devices have created a new class of integrated circuit architecture for the communications and instrumentation markets. RFSoCs combine high-accuracy ADCs and DACs operating at Giga samples per second (Gsps), with programmable heterogeneous compute engines.
 
-XUP is offering the **RFSoC 2x2 kit** exclusively for academic customers. 
+The [Xilinx University Program](https://www.xilinx.com/support/university/boards-portfolio/xup-boards/RFSoC2x2.html) is offering the **RFSoC 2x2 kit** exclusively for academic customers. 
 
 <img src="./images/01_rfsoc_2x2_t.png" style="zoom:75%;" />
 
@@ -15,9 +15,9 @@ The kit features:
 * Affordable price of $1,899 available only to academic customers 
 * RFSoC 2x2 board with 2 RF DAC and 2 RF ADC channels
 * [PYNQ framework](http://www.pynq.io) with Jupyter Lab for exceptional ease-of-use 
-* Open-source resources including teaching materials, notebooks, and design examples
-* Complete end-to-end reference designs including spectrum analyzers and software defined radios
-* GitHub-hosted repositories of all project materials
+* Open-source resources including teaching materials, notebooks, and design examples  (see [Educational resources](./educational_resource.html)
+* Complete end-to-end reference designs including spectrum analyzers and software defined radios (see [Overlays](overlays.html))
+* [GitHub-hosted repositories](https://github.com/Xilinx/RFSoC2x2-PYNQ) of all project materials
 * Online [PYNQ community support forum](https://discuss.pynq.io/)
 
 For more details on the RFSoC 2x2 hardware, see the [Board Overview](overview.md) page.
@@ -26,11 +26,13 @@ For more details on the RFSoC 2x2 hardware, see the [Board Overview](overview.md
 
 If you already have a board, go to the [RFSoC 2x2 Getting Started](./getting_started.md) guide. The getting started guide includes instructions and a video showing you how to setup your board to run PYNQ. 
 
-See the [XUP RFSoC 2x2 page](http://www.xilinx.com/support/university/boards-portfolio/xup-boards/RFSoC2x2.html) for details on how to purchase a RFSoC 2x2.
+See the [XUP RFSoC 2x2 page](http://www.xilinx.com/support/university/boards-portfolio/xup-boards/RFSoC2x2.html) for details on how to apply to purchase an RFSoC 2x2.
 
-## RFSoC 2x2 overlays
+## RFSoC 2x2 overlays and educational resources
 
 Once your board is up and running, go to the [RFSoC 2x2 Overlays](./overlays.md) page for details about what you can do with your board, and how to build your own designs.
+
+Review the [Educational resources](./educational_resource.html).
 
 ## PYNQ community
 

@@ -6,13 +6,19 @@ layout: default
 
 This guide will show you how to setup your computer and RFSoC 2x2 board using PYNQ. 
 
-### Prerequisites
+### Prerequisites 
+
+Included in the kit:
 
 * RFSoC 2x2 board
 * Micro SD card (16GB or more recommended)
 * Micro USB 3.0 Cable  
 * Power supply for RFSoC 2x2 board
-* Optional: Micro USB cable (for serial terminal)
+
+Optional: 
+
+* Micro USB (2.0) cable (for serial terminal)
+
 * Optional: Ethernet cable (for use instead of USB "Ethernet Gadget")
 
 ## Setup video
@@ -41,7 +47,7 @@ Check the following steps to setup the board.
 1. Connect pins 1 & 2 on jumper JP1/JTAG to configure the board to boot from SD Card.
 2. Connect the Micro USB cable from your computer to the USB 3.0 Composite port of your board.
 3. Insert the Micro SD card (pre-loaded with the RFSoC 2x2 PYNQ image), and plug in the power cable.
-4. Slide power switch up to turn on the board.
+4. Slide power switch down to turn on the board.
 
 ### PYNQ Boot sequence
 

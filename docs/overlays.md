@@ -56,4 +56,4 @@ You can download and contribute to this project, or post questions and feedback 
 
 ## The RFSoC Studio Installer
 
-The [University of Strathclyde](https://sdr.eee.strath.ac.uk/) SDR research laboratory has created a series of demonstration projects for the RFSoC2x2 development board, many of these have been introduced above. You can obtain all of the above demonstrations using one installation command by navigating to the [RFSoC Studio](https://github.com/strath-sdr/rfsoc_studio) repository and following the instructions provided in the readme.
+The [University of Strathclyde](https://sdr.eee.strath.ac.uk/) SDR research laboratory has created a series of demonstration projects for the RFSoC 2x2 development board, many of these have been introduced above. You can obtain all of the above demonstrations using one installation command by navigating to the [RFSoC Studio](https://github.com/strath-sdr/rfsoc_studio) repository and following the instructions provided in the readme.

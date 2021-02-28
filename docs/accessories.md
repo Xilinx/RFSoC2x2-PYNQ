@@ -2,6 +2,31 @@
 
 The RFSoC comes with a Micro SD card, a Micro USB 3.0 cable, a power supply and two SMA cables. Other optional accessories can be used with the RFSoC 2x2 including RF antennas, filters and amplifiers as described below. 
 
+## Included accessories
+
+### SD Card
+
+A 16 GB SD card is included with the kit. 
+
+If you need to make a new PYNQ image, the recommended Micro SD card size for PYNQ is 8GB. We recommend you use a 16GB or greater *branded/high quality* SD card. A larger capacity card will allow you to install more packages and overlays and save more data to the card. 
+
+A branded card, or a higher quality card is likely to be more reliable and higher speed cards will be faster to burn, and may give some (modest) performance increase when using your board. 
+
+### Power supply
+
+A 12V 6A (72W) power supply is included. 
+
+### Micro USB 3.0 Cable
+
+A composite USB 3.0 cable is used as a USB *Ethernet gadget* between your computer and the board. *Ethernet Gadget* supports Ethernet over USB using the [Remote Network Driver Interface Specification (RDNIS)](https://en.wikipedia.org/wiki/RNDIS) protocol. You can replace this cable with any compatible USB 3.0 A to Micro B cable. 
+
+The Micro USB 3.0 port is backward compatible with USB 2.0 cables. You can use a Micro USB (2.0) cable and connect it to the left side of the USB composite port on the board. 
+
+USB 3.0 is faster than USB 2.0, but for Ethernet Gadget with the RFSoC 2x2 the performance difference may not be significant. 
+
+### SMA cables
+
+2x RF cables with SMA connectors are included with the board and are mainly intended for loopback testing or connecting to other equipment. You can use other compatible SMA cables as required.  
 
 ## Recommended RF accessories
 
@@ -57,37 +82,12 @@ You should attenuate your input signal if you are using the VeGA amplifier on th
     * Attenutation Range: 1 dB to 42 dB
 
 
-## Included accessories
-
-### SD Card
-
-A 16 GB SD card is included with the kit. 
-
-If you need to make a new PYNQ image, the recommended Micro SD card size for PYNQ is 8GB. We recommend you use a 16GB or greater *branded/high quality* SD card. A larger capacity card will allow you to install more packages and overlays and save more data to the card. 
-
-A branded card, or a higher quality card is likely to be more reliable and higher speed cards will be faster to burn, and may give some (modest) performance increase when using your board. 
-
-### Power supply
-
-**Check details**
-
-If you need a replacement power supply, see:
-
-### Micro USB 3.0 Cable
-
-A composite USB 3.0 cable is used as a USB "Ethernet gadget" between your computer and the board. You can replace this cable with any compatible Micro USB composite cable. The Micro USB 3.0 port is backward compatible with USB 2.0 cables. You can use a Micro USB (2.0) cable and connect it to the left side of the USB composite port on the board. 
-
-USB 3.0 is faster than 2.0, but for Ethernet Gadget with the RFSoC 2x2, the performance difference may not be significant. 
-
-### SMA cables
-
-2 x 30 cm SMA cables are included with the board and are mainly intended for loopback testing. You can use other SMA cables if required.  
 
 ## Optional Accessories
 
 #### Micro USB (2.0) cable
 
-The RFSoC 2x2 also has a Micro USB UART/JTAG port. A standard Micro USB (2.0) cable is optional and can be connected to this port. You can use this if you need to access a serial terminal on the UART. You can also use JTAG on this cable/port to connect to the board from Vivado to download a bitstream, or for JTAG debug. 
+The RFSoC 2x2 also has a Micro USB UART/JTAG port. A standard Micro USB (2.0) micro B cable is optional and can be connected to this port. You can use this if you need to access a serial terminal on the UART. You can also use JTAG on this cable/port to connect to the board from Vivado to download a bitstream, or for JTAG debug. 
 
 ### Ethernet cable
 
