@@ -2,7 +2,7 @@ docs_list_title: documents
 docs:
   
 - title: User Manual
-  url: ./pdf/HTG-ZRF8_UG.pdf
+  url: ./user_manual.html
 
 - title: Board schematics
   url: ./pdf/HTG-ZRF2-XUP_REV_11_Schematic_20Jan21.pdf
