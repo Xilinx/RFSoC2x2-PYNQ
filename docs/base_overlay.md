@@ -80,15 +80,16 @@ git clone https://github.com/Xilinx/RFSoC2x2-PYNQ.git
 
 ## Create the Vivado project
 
-The current `base` design was built using Vivado 2020.1. You need to make sure you have installed the RFSoC devices. If you didn't do this when you installed Vivado, you can add them from the Vivado *help* menu. 
-Other versions of Vivado are untested and are unlikely to build this design without modifications. 
+The current `base` design was built using **Vivado 2020.1**. Other versions of Vivado are untested and are unlikely to build this design without modifications. 
+
+You need to make sure you have included the RFSoC devices in your Vivado installation. If you didn't do this when you installed Vivado, you can add them from the Vivado *help* menu. 
 
 ### Linux
 
-On Linux, make sure you have sourced your Xilinx tools (Vivado 2020.1), change to the following directory and run `make`.
+On Linux, make sure you have sourced your Xilinx tools and navigate to the `base` directory where you cloned this repository and run `make`.
 
 ```console
-cd RFSoC2x2-PYNQ/board/RFSoC2x2/base/
+cd ./RFSoC2x2-PYNQ/board/RFSoC2x2/base/
 make
 ```
 
@@ -96,13 +97,13 @@ This will build a Vivado project with the base design for the board. The make fi
 
 ### Windows
 
-* Open Vivado 2020.1 and use the TCL console to change (`cd`) into the `base` directory. 
+* Open Vivado and use the TCL console to navigate to the `base` directory. 
 
 ```console
-cd RFSoC2x2-PYNQ/board/RFSoC2x2/base/
+cd ./RFSoC2x2-PYNQ/board/RFSoC2x2/base/
 ```
 
-And then, run the following command in order to create a Vivado project and build the block diagram for the base overlay:
+Run the following command in order to create a Vivado project and build the block diagram for the base overlay:
 
 ```console
 source ./base.tcl
@@ -127,7 +128,7 @@ source ./build_bitstream.tcl
 
 This command:
 
-1. Creates the HLD wrapper for the block design
+1. Creates the HDL wrapper for the block design
 1. Adds the constraint file (.xdc)
 1. Sets platform properties 
 1. Launches the process to generate the bitstream
