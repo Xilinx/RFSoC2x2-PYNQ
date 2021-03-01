@@ -79,7 +79,7 @@ You should attenuate your input signal if you are using the VeGA amplifier on th
 * [SMA Attenuator Kit](https://www.nooelec.com/store/sdr/sdr-addons/attenuators/attenuator-bundle.html)
     * Brand: NooElec
     * Frequency Range: DC - 6 GHz
-    * Attenutation Range: 1 dB to 42 dB
+    * Attenuation Range: 1 dB to 42 dB
 
 
 
