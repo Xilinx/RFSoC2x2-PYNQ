@@ -15,7 +15,7 @@ The kit features:
 * Affordable price of $1,899 available only to academic customers 
 * RFSoC 2x2 board with 2 RF DAC and 2 RF ADC channels
 * [PYNQ framework](http://www.pynq.io) with Jupyter Lab for exceptional ease-of-use 
-* Open-source resources including teaching materials, notebooks, and design examples  (see [Educational resources](./educational_resource.html)
+* Open-source resources including teaching materials, notebooks, and design examples  (see [Educational resources](./educational_resources.html))
 * Complete end-to-end reference designs including spectrum analyzers and software defined radios (see [Overlays](overlays.html))
 * [GitHub-hosted repositories](https://github.com/Xilinx/RFSoC2x2-PYNQ) of all project materials
 * Online [PYNQ community support forum](https://discuss.pynq.io/)
@@ -32,7 +32,7 @@ See the [XUP RFSoC 2x2 page](http://www.xilinx.com/support/university/boards-por
 
 Once your board is up and running, go to the [RFSoC 2x2 Overlays](./overlays.md) page for details about what you can do with your board, and how to build your own designs.
 
-Review the [Educational resources](./educational_resource.html).
+Review the [Educational resources](./educational_resources.html).
 
 ## PYNQ community
 
