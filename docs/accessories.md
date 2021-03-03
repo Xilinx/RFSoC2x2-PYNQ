@@ -34,6 +34,12 @@ USB 3.0 is faster than USB 2.0, but for Ethernet Gadget with the RFSoC 2x2 the p
 
 When selecting an antenna, be aware of its operational frequency range and the requirements of the target application. Below, are off-the-shelf suggestions of antennas you can use with your RFSoC2x2 development board.
 
+* [Nooelec RaTLSnake](https://www.nooelec.com/store/sdr/sdr-addons/antennas/ratlsnake-m6.html)
+    * Brand: NooElec
+    * Frequency Range: 100-800MHz, 700-1200MHz, 1100-1800MHz
+    * Style: Tilt / Swivel, Telescopic
+    * Applications: UHF, DVB-T/T2
+
 * [ANT500 Telescopic Antenna](https://www.nooelec.com/store/sdr/sdr-addons/antennas/ant500.html)
     * Brand: NooElec
     * Frequency Range: 75 MHz to 1 GHz
