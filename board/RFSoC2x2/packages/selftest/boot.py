@@ -30,19 +30,18 @@
 
 import os
 os.environ['BOARD'] = 'RFSoC2x2'
-import logging
+
 from time import time, sleep
 from datetime import datetime
+
+import logging
 import netifaces
 import pandas as pd
+import numpy as np
+
 from pynq import get_rails, DataRecorder
 from pynq.overlays.base import BaseOverlay
-import xrfdc
-# TODO: FIX
-# from rfsystem.transmitter import Transmitter
-# from rfsystem.receiver import Receiver
-# from rfsystem.data_inspector import Visualiser
-from rfsystem.spectrum_sweep import SpectrumSweep
+from rfsystem.spectrum_sweep import ToneGenerator, FrequencySelector, SpectrumProcessor
 
 
 __author__ = "Yun Rock Qu"
@@ -81,27 +80,20 @@ BITSTREAM_PATH = '/usr/local/lib/python3.6/dist-packages/' \
 class SelfTestOverlay(BaseOverlay):
 
     def __init__(self, bitfile_name=BITSTREAM_PATH, autoconfig=False,
-                 **kwargs):
+                **kwargs):
+
         super().__init__(bitfile_name, **kwargs)
         addrs = netifaces.ifaddresses('eth0')
         self.mac = addrs[netifaces.AF_LINK][0]['addr'].upper()
-        self._dac_tile_228 = self._dac_block_0 = None
-        self._dac_tile_229 = self._dac_block_4 = None
-        self._adc_tile_224 = self._adc_block_0 = None
-        self._adc_tile_226 = self._adc_block_4 = None
-        self.transmit = None
-        self.receive = None
-        self.sweep = None
-        self.leds = self.rgbleds = None
         self.pmbus_rails = None
-        self.pmbus_sensors = None
         self.pmbus_recorder = None
-        self.dct_results = None
-
+        self.pmbus_sensors = None
+        self.sweep = []
+        self.sweep_results = []
         if autoconfig:
-            self.configure()
+            self.configure_all()
 
-    def configure(self):
+    def configure_all(self):
         """The main call to configure all the components.
 
         This step can generate some exceptions for bad boards so we have to
@@ -110,108 +102,36 @@ class SelfTestOverlay(BaseOverlay):
 
         """
         self.init_i2c()
+        self.config_leds()
         self.config_pmbus()
         self.init_rf_clks()
-        self.config_dac228()
-        self.config_dac229()
-        self.config_adc224()
-        self.config_adc225()
-        self.config_tx_rx()
+        self.config_tile_clock(btype='dac', tile=0)
+        self.config_tile_clock(btype='dac', tile=1)
+        self.config_tile_clock(btype='adc', tile=0)
+        self.config_tile_clock(btype='adc', tile=2)
         self.config_sweep()
-
-    def config_dac228(self):
-        """Configure DAC Tile 228 and DAC 0
-
-        """
-        self._dac_tile_228 = self.usp_rf_data_converter.dac_tiles[0]
-        self._dac_block_0 = self._dac_tile_228.blocks[0]
-
-        self._dac_tile_228.DynamicPLLConfig(1, 409.6, 4096)
-        self._dac_block_0.NyquistZone = 1
-        self._dac_block_0.MixerSettings = {
-            'CoarseMixFreq': xrfdc.COARSE_MIX_BYPASS,
-            'EventSource': xrfdc.EVNT_SRC_IMMEDIATE,
-            'FineMixerScale': xrfdc.MIXER_SCALE_1P0,
-            'Freq': -64,
-            'MixerMode': xrfdc.MIXER_MODE_C2R,
-            'MixerType': xrfdc.MIXER_TYPE_FINE,
-            'PhaseOffset': 0.0
-        }
-        self._dac_block_0.UpdateEvent(xrfdc.EVENT_MIXER)
-        self._dac_tile_228.SetupFIFO(True)
-
-    def config_dac229(self):
-        """Configure DAC Tile 229 and DAC 4
+        
+    def config_leds(self):
+        """ Configure all the LEDs.
+        
+        LEDs are off by default after configuration.
 
         """
-        self._dac_tile_229 = self.usp_rf_data_converter.dac_tiles[1]
-        self._dac_block_4 = self._dac_tile_229.blocks[0]
-
-        self._dac_tile_229.DynamicPLLConfig(1, 409.6, 4096)
-        self._dac_block_4.NyquistZone = 1
-        self._dac_block_4.MixerSettings = {
-            'CoarseMixFreq': xrfdc.COARSE_MIX_BYPASS,
-            'EventSource': xrfdc.EVNT_SRC_IMMEDIATE,
-            'FineMixerScale': xrfdc.MIXER_SCALE_1P0,
-            'Freq': -64,
-            'MixerMode': xrfdc.MIXER_MODE_C2R,
-            'MixerType': xrfdc.MIXER_TYPE_FINE,
-            'PhaseOffset': 0.0
-        }
-        self._dac_block_4.UpdateEvent(xrfdc.EVENT_MIXER)
-        self._dac_tile_229.SetupFIFO(True)
-
-    def config_adc224(self):
-        """Configure ADC Tile 224 and ADC 0
-
-        """
-        self._adc_tile_224 = self.usp_rf_data_converter.adc_tiles[0]
-        self._adc_block_0 = self._adc_tile_224.blocks[0]
-
-        self._adc_tile_224.DynamicPLLConfig(1, 409.6, 4096)
-        self._adc_block_0.NyquistZone = 1
-        self._adc_block_0.MixerSettings = {
-            'CoarseMixFreq': xrfdc.COARSE_MIX_BYPASS,
-            'EventSource': xrfdc.EVNT_SRC_TILE,
-            'FineMixerScale': xrfdc.MIXER_SCALE_1P0,
-            'Freq': 2048,
-            'MixerMode': xrfdc.MIXER_MODE_R2C,
-            'MixerType': xrfdc.MIXER_TYPE_FINE,
-            'PhaseOffset': 0.0
-        }
-        self._adc_block_0.UpdateEvent(xrfdc.EVENT_MIXER)
-        self._adc_tile_224.SetupFIFO(True)
-
-    def config_adc225(self):
-        """Configure ADC Tile 225 and ADC 4
-
-        """
-        self._adc_tile_226 = self.usp_rf_data_converter.adc_tiles[2]
-        self._adc_block_4 = self._adc_tile_226.blocks[0]
-
-        self._adc_tile_226.DynamicPLLConfig(1, 409.6, 4096)
-        self._adc_block_4.NyquistZone = 1
-        self._adc_block_4.MixerSettings = {
-            'CoarseMixFreq': xrfdc.COARSE_MIX_BYPASS,
-            'EventSource': xrfdc.EVNT_SRC_TILE,
-            'FineMixerScale': xrfdc.MIXER_SCALE_1P0,
-            'Freq': 2048,
-            'MixerMode': xrfdc.MIXER_MODE_R2C,
-            'MixerType': xrfdc.MIXER_TYPE_FINE,
-            'PhaseOffset': 0.0
-        }
-        self._adc_block_4.UpdateEvent(xrfdc.EVENT_MIXER)
-        self._adc_tile_226.SetupFIFO(True)
-
-    def config_tx_rx(self):
-        """Configure transmit object and receive object.
-
-        This relies on previous components have been configured correctly.
-
-        """
-        # TODO: FIX
-        self.transmit = self.radio.transmitter
-        self.receive = self.radio.receiver
+        delay = 0.3
+        for led in [0, 1]:
+            self.rgbleds[led].write(1)
+            sleep(delay)
+            self.rgbleds[led].write(0)
+        for led in self.leds:
+            led.on()
+            sleep(delay)
+            led.off()
+        
+        for i in range(0, 3):
+            self.leds.write(15, 0xF)
+            sleep(delay)
+            self.leds.write(0, 0xF)
+            sleep(delay)
 
     def config_pmbus(self):
         """Configure pmbus related attributes.
@@ -234,31 +154,29 @@ class SelfTestOverlay(BaseOverlay):
         Use a default setting.
 
         """
-        freq = [100, 400, 900, 1400, 1900, 2200, 2600, 2800, 3200, 3500]
-        self.sweep = SpectrumSweep(self.transmit, self.receive,
-                                   frequencies=freq, visualise=False)
+        frequencies = [600, 900, 1400, 2600, 2800, 3200, 3500]
+        number_samples = 8192
+        for i in range(0, 2):
+            self.sweep.append(SpectrumSweepApplication(dac_channel=self.radio.transmitter.channel[i],
+                                                       adc_channel=self.radio.receiver.channel[i],
+                                                       frequencies=frequencies,
+                                                       number_samples=number_samples))
 
-    def test_pll_clks(self):
-        """Method to test the PLL clocks
-
-        Reading from the GPIO. 1 indicates that the clock is locked and has
-        been detected.
-
-        Returns
-        -------
-        dict
-            A dictionary storing a total number of 5 test results, each being
-            a bool value, indicating pass or fail.
+    def config_tile_clock(self, btype='adc', tile=0):
+        """Simple method to check that a tile's PLL clock has a valid input
 
         """
-        dc_clk_locks = {}
-        clk_lock_reg = self.clk_locked_gpio.read()
-        dc_clk_locks['ddr_lock'] = bool((clk_lock_reg >> 0) & 0x1)
-        dc_clk_locks['adc_224_lock'] = bool((clk_lock_reg >> 1) & 0x1)
-        dc_clk_locks['adc_226_lock'] = bool((clk_lock_reg >> 2) & 0x1)
-        dc_clk_locks['dac_228_lock'] = bool((clk_lock_reg >> 3) & 0x1)
-        dc_clk_locks['dac_229_lock'] = bool((clk_lock_reg >> 4) & 0x1)
-        return dc_clk_locks
+        tile = getattr(self.radio.rfdc, ''.join([btype, '_tiles']))[tile]
+        tile.DynamicPLLConfig(1, 409.6, 4096)
+
+    def test_pll_clocks(self, btype='adc', tile=0):
+        """Test all pll tile config using config_tile_clock()
+
+        """
+        self.config_tile_clock(btype='dac', tile=0)
+        self.config_tile_clock(btype='dac', tile=1)
+        self.config_tile_clock(btype='adc', tile=0)
+        self.config_tile_clock(btype='adc', tile=2)
 
     def test_power_rail(self):
         """Check pmbus for non nominal values.
@@ -293,13 +211,136 @@ class SelfTestOverlay(BaseOverlay):
             a bool value, indicating pass or fail.
 
         """
+        rfdc_results = []
+
         with self.pmbus_recorder.record(1):
-            self.dct_results = self.sweep.run()
+            for i in range(0, 2):
+                self.sweep[i].run()
+        
+        for i in range(0, 2):
+            array_results = self.sweep[i].results.get_values()
+            fundamental_result = not all(array_results[0] - array_results[1])
+            sfdr_result = all(array_results[2] > 40)
+            channel_result = fundamental_result and sfdr_result
+            rfdc_results.append(channel_result)
 
         dc_channel_flags = {}
-        for ch_index, ch_flag in enumerate(self.sweep.passed):
-            dc_channel_flags['dc_ch_{}'.format(ch_index)] = bool(ch_flag)
+        for i in range(0, 2):
+            dc_channel_flags['dc_ch_{}'.format(i)] = rfdc_results[i]
         return dc_channel_flags
+
+
+class SpectrumSweepApplication():
+    """A Spectrum Sweep Application.
+
+    """
+    def __init__(self,
+                 dac_channel,
+                 adc_channel,
+                 frequencies=[600, 900, 1400, 2600, 2800, 3200, 3500],
+                 number_samples=8192):
+        """Class constructor for the Spectrum Sweep Application.
+
+        Create a new spectrum sweep application by assigning a DacChannel and
+        ADCChannel object. Optionally set the frequencies to be tested between
+        0 to 4096MHz. The number of samples defines the FFT size for calculating
+        the fundamental receive frequency and simple SFDR.
+
+        Attributes
+        ----------
+        results : Read-only, returns a pandas data frame with the results of
+        the previous spectrum sweep run. If no run has executed, returns None.
+
+        """
+        self._results = None
+
+        self._frequencies = frequencies
+
+        self._sample_frequency = adc_channel.adc_block.BlockStatus['SamplingFreq']*1e9 / \
+            adc_channel.adc_block.DecimationFactor
+
+        self._number_samples = number_samples
+
+        self._rbw = self._sample_frequency/self._number_samples
+
+        self._spectrum_processor = SpectrumProcessor(
+            channel=adc_channel,
+            sample_frequency=self._sample_frequency,
+            number_samples=self._number_samples)
+
+        self._frequency_selector = FrequencySelector(
+            block=adc_channel.adc_block)
+
+        self._tone_generator = ToneGenerator(
+            channel=dac_channel)
+        
+    @property
+    def results(self):
+        """ Returns the results of the previous run in a pandas dataframe.
+
+        """
+        return pd.DataFrame(data=self._results,
+                            index=["TX Frequency (MHz)", "RX Fundamental (MHz)", "SFDR (dB)"])
+    
+    def _start_generator(self):
+        """ Starts the tone generator
+
+        """
+        self._tone_generator.frequency_selector.centre_frequency = self._frequencies[0]
+        self._tone_generator.amplitude_controller.enable = True
+        self._tone_generator.amplitude_controller.gain = 0.5
+        
+    def _stop_generator(self):
+        """ Stops the tone generator
+
+        """
+        self._tone_generator.amplitude_controller.enable = False
+        self._tone_generator.amplitude_controller.gain = 0
+
+    def _calculate_simple_sfdr(self, spectrum):
+        """ Calculates the SFDR for a given spectrum and channel properties
+
+        """
+        return np.max(spectrum) - np.average(spectrum)
+
+    def _calculate_fundamental(self, spectrum):
+        """ Calculated the fundamental signal in a spectrum given the channel
+        properties
+
+        """
+        maxindex = np.argsort(spectrum)[-1:][0]
+        return (maxindex * self._rbw + abs(self._frequency_selector.centre_frequency*1e6) - \
+            self._sample_frequency/2)*1e-6
+
+    def _run_sweep(self):
+        """ Runs the Spectrum Sweep Application
+
+        """
+        fundamental = []
+        sfdr = []
+        frequency_zones = [self._sample_frequency/2*1e-6, 
+        (self._sample_frequency+self._sample_frequency/2)*1e-6]
+        for frequency in self._frequencies:
+            self._tone_generator.frequency_selector.centre_frequency = frequency
+            sleep(1)
+            if frequency*1e6 < self._sample_frequency:
+                receive_frequency = frequency_zones[0]
+            else:
+                receive_frequency = frequency_zones[1]
+            self._frequency_selector.centre_frequency = receive_frequency
+            spectrum = self._spectrum_processor.get_spectrum()
+            fundamental.append(self._calculate_fundamental(spectrum))
+            sfdr.append(self._calculate_simple_sfdr(spectrum))
+        self._results=np.array([self._frequencies, fundamental, sfdr])
+
+    def run(self):
+        """ Starts the tone generator and runs Spectrum Sweep
+        Applications
+
+        """
+        self._start_generator()
+        self._run_sweep()
+        self._stop_generator()
 
 
 start_time = time()
@@ -328,13 +369,11 @@ logger.setLevel(logging.DEBUG)
 tty_path = '/dev/ttyPS0'
 tty = os.open(tty_path, os.O_RDWR)
 
-
 def logprint(message):
     logging.debug(message)
     if terminal_ok:
         os.write(tty, bytes(message + '\n', 'utf-8'))
     print(message)
-
 
 """Section 0: Log the boot message, download overlay
 
@@ -415,7 +454,6 @@ if test_flags['mac_test'] and test_flags['config_leds'] and \
         test_flags['config_pmbus']:
     test_overlay.leds[0].on()
 
-
 """Section 2: Test Clocks
 
 In this section we will reconfiguret the RF clock chips, namely, LMK and LMX
@@ -433,7 +471,6 @@ logprint('Set RF clocks: {}'.format(test_flags['set_ref_clks']))
 if test_flags['set_ref_clks']:
     test_overlay.leds[1].on()
 
-
 """Section 3: Test RF components.
 
 We will configure the RF components, including ADC, DAC. After that, we 
@@ -442,26 +479,13 @@ sweep the frequency domain while checking power.
 """
 test_flags['config_rf'] = True
 try:
-    test_overlay.config_dac228()
-    test_overlay.config_dac229()
-    test_overlay.config_adc224()
-    test_overlay.config_adc225()
-    test_overlay.config_tx_rx()
+    test_overlay.config_tile_clock(btype='dac', tile=0)
+    test_overlay.config_tile_clock(btype='dac', tile=1)
+    test_overlay.config_tile_clock(btype='adc', tile=0)
+    test_overlay.config_tile_clock(btype='adc', tile=2)
     test_overlay.config_sweep()
 except:
     test_flags['config_rf'] = False
-logprint('Configure ADC/DAC: {}'.format(test_flags['config_rf']))
-
-
-test_flags['clk_test'] = True
-try:
-    clk_locks = test_overlay.test_pll_clks()
-    test_flags.update(clk_locks)
-    for clk, lock_state in clk_locks.items():
-        logprint('{}: {}'.format(clk, lock_state))
-        test_flags['clk_test'] = test_flags['clk_test'] and lock_state
-except:
-    test_flags['clk_test'] = False
 logprint('Configure ADC/DAC: {}'.format(test_flags['config_rf']))
 
 
@@ -485,7 +509,6 @@ else:
         test_flags['dc_test'] = test_flags['dc_test'] and dc_ch
 logprint('DC tests: {}'.format(test_flags['dc_test']))
 
-
 test_flags['pmbus_test'] = True
 try:
     pmbus_ch_flags = test_overlay.test_power_rail()
@@ -507,19 +530,13 @@ if test_flags['config_rf'] and test_flags['dc_test']:
 
 
 try:
-    df_ch0 = pd.DataFrame(data=test_overlay.dct_results[0],
-                          index=["TX Frequency (MHz)",
-                                 "RX Fundamental (MHz)",
-                                 "SFDR excl harm & dc. (dBm)"])
+    df_ch0 = test_overlay.sweep[0].results
     logprint('ch0:\n' + str(df_ch0.round(2)))
 except:
     logprint('ch0 data not available.')
 
 try:
-    df_ch1 = pd.DataFrame(data=test_overlay.dct_results[1],
-                          index=["TX Frequency (MHz)",
-                                 "RX Fundamental (MHz)",
-                                 "SFDR excl harm & dc. (dBm)"])
+    df_ch1 = test_overlay.sweep[1].results
     logprint('ch1:\n' + str(df_ch1.round(2)))
 except:
     logprint('ch1 data not available.')
