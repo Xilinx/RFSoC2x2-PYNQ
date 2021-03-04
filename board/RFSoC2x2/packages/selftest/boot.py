@@ -44,7 +44,7 @@ from rfsystem.spectrum_sweep import FrequencySelector
 from rfsystem.spectrum_sweep import SpectrumProcessor
 
 
-__author__ = "Yun Rock Qu"
+__author__ = "David Northcote, Marius Siauciulis, Yun Rock Qu"
 __copyright__ = "Copyright 2021, Xilinx"
 __email__ = "pynq_support@xilinx.com"
 
