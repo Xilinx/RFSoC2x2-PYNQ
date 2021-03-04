@@ -33,15 +33,15 @@ os.environ['BOARD'] = 'RFSoC2x2'
 
 from time import time, sleep
 from datetime import datetime
-
 import logging
 import netifaces
 import pandas as pd
 import numpy as np
-
 from pynq import get_rails, DataRecorder
 from pynq.overlays.base import BaseOverlay
-from rfsystem.spectrum_sweep import ToneGenerator, FrequencySelector, SpectrumProcessor
+from rfsystem.spectrum_sweep import ToneGenerator
+from rfsystem.spectrum_sweep import FrequencySelector
+from rfsystem.spectrum_sweep import SpectrumProcessor
 
 
 __author__ = "Yun Rock Qu"
@@ -73,6 +73,7 @@ RAIL_RANGES = {
     '5V0_DC': {'voltage': (5 * MIN_V_ERR, 5 * MAX_V_ERR),
                'current': (0, 2)}
 }
+FREQUENCIES = (600, 900, 1400, 2600, 2800, 3200, 3500)
 BITSTREAM_PATH = '/usr/local/lib/python3.6/dist-packages/' \
                  'pynq/overlays/base/base.bit'
 
@@ -80,7 +81,7 @@ BITSTREAM_PATH = '/usr/local/lib/python3.6/dist-packages/' \
 class SelfTestOverlay(BaseOverlay):
 
     def __init__(self, bitfile_name=BITSTREAM_PATH, autoconfig=False,
-                **kwargs):
+                 **kwargs):
 
         super().__init__(bitfile_name, **kwargs)
         addrs = netifaces.ifaddresses('eth0')
@@ -110,7 +111,7 @@ class SelfTestOverlay(BaseOverlay):
         self.config_tile_clock(btype='adc', tile=0)
         self.config_tile_clock(btype='adc', tile=2)
         self.config_sweep()
-        
+
     def config_leds(self):
         """ Configure all the LEDs.
         
@@ -126,7 +127,7 @@ class SelfTestOverlay(BaseOverlay):
             led.on()
             sleep(delay)
             led.off()
-        
+
         for i in range(0, 3):
             self.leds.write(15, 0xF)
             sleep(delay)
@@ -157,20 +158,21 @@ class SelfTestOverlay(BaseOverlay):
         frequencies = [600, 900, 1400, 2600, 2800, 3200, 3500]
         number_samples = 8192
         for i in range(0, 2):
-            self.sweep.append(SpectrumSweepApplication(dac_channel=self.radio.transmitter.channel[i],
-                                                       adc_channel=self.radio.receiver.channel[i],
-                                                       frequencies=frequencies,
-                                                       number_samples=number_samples))
+            self.sweep.append(SpectrumSweepApplication(
+                dac_channel=self.radio.transmitter.channel[i],
+                adc_channel=self.radio.receiver.channel[i],
+                frequencies=frequencies,
+                number_samples=number_samples))
 
     def config_tile_clock(self, btype='adc', tile=0):
-        """Simple method to check that a tile's PLL clock has a valid input
+        """Simple method to check that a tile's PLL clock has a valid input.
 
         """
         tile = getattr(self.radio.rfdc, ''.join([btype, '_tiles']))[tile]
         tile.DynamicPLLConfig(1, 409.6, 4096)
 
-    def test_pll_clocks(self, btype='adc', tile=0):
-        """Test all pll tile config using config_tile_clock()
+    def test_pll_clocks(self):
+        """Test all pll tile config using config_tile_clock().
 
         """
         self.config_tile_clock(btype='dac', tile=0)
@@ -230,15 +232,12 @@ class SelfTestOverlay(BaseOverlay):
         return dc_channel_flags
 
 
-class SpectrumSweepApplication():
+class SpectrumSweepApplication:
     """A Spectrum Sweep Application.
 
     """
-    def __init__(self,
-                 dac_channel,
-                 adc_channel,
-                 frequencies=[600, 900, 1400, 2600, 2800, 3200, 3500],
-                 number_samples=8192):
+    def __init__(self, dac_channel, adc_channel,
+                 frequencies=FREQUENCIES, number_samples=8192):
         """Class constructor for the Spectrum Sweep Application.
 
         Create a new spectrum sweep application by assigning a DacChannel and
@@ -253,10 +252,10 @@ class SpectrumSweepApplication():
 
         """
         self._results = None
-
         self._frequencies = frequencies
 
-        self._sample_frequency = adc_channel.adc_block.BlockStatus['SamplingFreq']*1e9 / \
+        self._sample_frequency = \
+            adc_channel.adc_block.BlockStatus['SamplingFreq']*1e9 / \
             adc_channel.adc_block.DecimationFactor
 
         self._number_samples = number_samples
@@ -280,13 +279,15 @@ class SpectrumSweepApplication():
 
         """
         return pd.DataFrame(data=self._results,
-                            index=["TX Frequency (MHz)", "RX Fundamental (MHz)", "SFDR (dB)"])
+                            index=["TX Frequency (MHz)",
+                                   "RX Fundamental (MHz)", "SFDR (dB)"])
     
     def _start_generator(self):
         """ Starts the tone generator
 
         """
-        self._tone_generator.frequency_selector.centre_frequency = self._frequencies[0]
+        self._tone_generator.frequency_selector.centre_frequency = \
+            self._frequencies[0]
         self._tone_generator.amplitude_controller.enable = True
         self._tone_generator.amplitude_controller.gain = 0.5
         
@@ -309,8 +310,9 @@ class SpectrumSweepApplication():
 
         """
         maxindex = np.argsort(spectrum)[-1:][0]
-        return (maxindex * self._rbw + abs(self._frequency_selector.centre_frequency*1e6) - \
-            self._sample_frequency/2)*1e-6
+        return (maxindex * self._rbw +
+                abs(self._frequency_selector.centre_frequency*1e6) -
+                self._sample_frequency/2)*1e-6
 
     def _run_sweep(self):
         """ Runs the Spectrum Sweep Application
@@ -318,8 +320,9 @@ class SpectrumSweepApplication():
         """
         fundamental = []
         sfdr = []
-        frequency_zones = [self._sample_frequency/2*1e-6, 
-        (self._sample_frequency+self._sample_frequency/2)*1e-6]
+        frequency_zones = \
+            [self._sample_frequency/2*1e-6,
+             (self._sample_frequency + self._sample_frequency/2)*1e-6]
         for frequency in self._frequencies:
             self._tone_generator.frequency_selector.centre_frequency = frequency
             sleep(1)
@@ -331,7 +334,7 @@ class SpectrumSweepApplication():
             spectrum = self._spectrum_processor.get_spectrum()
             fundamental.append(self._calculate_fundamental(spectrum))
             sfdr.append(self._calculate_simple_sfdr(spectrum))
-        self._results=np.array([self._frequencies, fundamental, sfdr])
+        self._results = np.array([self._frequencies, fundamental, sfdr])
 
     def run(self):
         """ Starts the tone generator and runs Spectrum Sweep
@@ -369,11 +372,13 @@ logger.setLevel(logging.DEBUG)
 tty_path = '/dev/ttyPS0'
 tty = os.open(tty_path, os.O_RDWR)
 
+
 def logprint(message):
     logging.debug(message)
     if terminal_ok:
         os.write(tty, bytes(message + '\n', 'utf-8'))
     print(message)
+
 
 """Section 0: Log the boot message, download overlay
 
@@ -400,6 +405,7 @@ while timeout > 0:
     sleep(1)
 if timeout == 0:
     terminal_ok = False
+
 
 """Section 1: Test the basic components.
 
@@ -454,9 +460,10 @@ if test_flags['mac_test'] and test_flags['config_leds'] and \
         test_flags['config_pmbus']:
     test_overlay.leds[0].on()
 
+
 """Section 2: Test Clocks
 
-In this section we will reconfiguret the RF clock chips, namely, LMK and LMX
+In this section we will reconfigure the RF clock chips, namely, LMK and LMX
 chips.
 
 """
@@ -470,6 +477,7 @@ logprint('Set RF clocks: {}'.format(test_flags['set_ref_clks']))
 
 if test_flags['set_ref_clks']:
     test_overlay.leds[1].on()
+
 
 """Section 3: Test RF components.
 
@@ -509,6 +517,7 @@ else:
         test_flags['dc_test'] = test_flags['dc_test'] and dc_ch
 logprint('DC tests: {}'.format(test_flags['dc_test']))
 
+
 test_flags['pmbus_test'] = True
 try:
     pmbus_ch_flags = test_overlay.test_power_rail()
@@ -540,6 +549,7 @@ try:
     logprint('ch1:\n' + str(df_ch1.round(2)))
 except:
     logprint('ch1 data not available.')
+
 
 try:
     dump = str(test_overlay.pmbus_recorder.frame)
