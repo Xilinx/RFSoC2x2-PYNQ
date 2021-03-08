@@ -2,8 +2,14 @@
 
 View the *RFSoC 2x2 Kit GitHub page* for this repository on [www.rfsoc-pynq.io](http://www.rfsoc-pynq.io/).
 
-This repository is used to host the *GitHub Documentation Page* for the RFSoC2x2 kit. It includes the sources for the documentation, and board collateral including source code and build scripts for the RFSoC 2x2 *base* design. 
-This design files in this repository are compatible with Xilinx Vivado 2020.1 and PYNQ v2.6.0 and later.
+This repository is used to host the *GitHub Documentation Page* for the
+RFSoC2x2 kit. It includes the sources for the documentation, and board
+collateral including source code and build scripts for the RFSoC 2x2 *base*
+design. The design files in this repository are compatible with Xilinx
+Vivado 2020.1, and PYNQ v2.6.0 and later.
+
+Users can find the Vivado board files on
+[Xilinx Vivado board repository](https://github.com/Xilinx/XilinxBoardStore/tree/2020.1/boards/Xilinx/rfsoc2x2/1.1).
 
 ![alt](./docs/images/01_rfsoc_2x2_t.png)
 
