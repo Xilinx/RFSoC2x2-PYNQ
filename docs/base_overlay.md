@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # RFSoC 2x2 Base overlay
 
 The `base` overlay is included in the PYNQ image for the  RFSoC 2x2 board. The purpose of the base overlay design is to allow you to get start using your board with PYNQ out-of-the-box. The base design includes a bitstream with IP to allow you to start using the RF ADCs and DACs on the board. The other main blocks are the memory controller for the PL DRAM, two PYNQ PMOD IOPs to connect to Pmod™ ports, AXI GPIO controllers, an interrupt block, and a system monitor. 

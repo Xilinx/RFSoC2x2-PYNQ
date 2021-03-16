@@ -32,7 +32,7 @@ See the [XUP RFSoC 2x2 page](http://www.xilinx.com/support/university/boards-por
 
 Once your board is up and running, go to the [RFSoC 2x2 Overlays](./overlays.md) page for details about what you can do with your board, and how to build your own designs.
 
-Review the [Educational resources](./educational_resources.html).
+Review the [Educational resources](./educational_resources.html) and view the archived material including video and pdf presentations from the [ISFPGA 2021 RFSoC 2x2 tutorial](./tutorial.html).
 
 ## PYNQ community
 

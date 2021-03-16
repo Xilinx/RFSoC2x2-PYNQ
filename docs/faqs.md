@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Frequently Asked Questions
 
 ## Who is the RFSoC 2x2 kit intended for? 
@@ -31,7 +35,7 @@
 
 ## Which RFSoC device is on the board?
 
-* The Gen1 RFSoC XCZU28DR part. This part has 8x ADC and 8x DAC but only 2x ADC and 2x DAC are connect on the board. 
+* The Gen1 RFSoC XCZU28DR part. This part has 8x ADC and 8x DAC. 2x ADCs and 2x DACs are connected to SMAs on the board. The other ADCs and DACs on the RFSoC device are not available. 
 
 ## Is a Gen 3 board planned? 
 
