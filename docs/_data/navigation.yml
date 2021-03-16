@@ -19,6 +19,9 @@ docs:
 - title: Educational Resources
   url: educational_resources.html
   
+- title: Tutorial
+  url: tutorial.html
+  
 - title: Support
   url: support.html
   
