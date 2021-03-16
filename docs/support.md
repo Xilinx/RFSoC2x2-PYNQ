@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # RFSoC 2x2 support
 
 ## PYNQ support

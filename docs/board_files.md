@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # RFSoC 2x2 Board Files
 
 The RFSoC 2x2 board files can be found on the Xilinx *Board Store*

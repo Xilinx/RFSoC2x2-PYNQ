@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Accessories
 
 The RFSoC comes with a Micro SD card, a Micro USB 3.0 cable, a power supply and two SMA cables. Other optional accessories can be used with the RFSoC 2x2 including RF antennas, filters and amplifiers as described below. 

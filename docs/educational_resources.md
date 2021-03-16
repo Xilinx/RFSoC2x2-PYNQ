@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Educational Resources
 
 The following educational material to support the Zynq RFSoC, and the RFSoC2x2 has been developed by the University of Strathclyde in partnership with Xilinx. 

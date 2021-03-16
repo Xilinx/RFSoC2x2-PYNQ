@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # RFSoC 2x2 overlays
 
 ## Base Overlay
