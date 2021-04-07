@@ -20,8 +20,13 @@ The benefits of integrating direct RF sampling data converters were demonstrated
 
 | Links to YouTube chapters                                    | Presentation                                     |
 | ------------------------------------------------------------ | ------------------------------------------------ |
+| [Introduction (0:00)](https://youtu.be/73iypldwZ2I)          |                                                  |
 | [RFSoC Family overview (2:50)](https://youtu.be/73iypldwZ2I?t=170) | [PDF](./pdf/isfpga_rfsoc_2x2_rfsoc_overview.pdf) |
 | [RFSoC 2x2 project overview (23:13)](https://youtu.be/73iypldwZ2I?t=1393) | [PDF](./pdf/isfpga_rfsoc_2x2_overview.pdf)       |
-| [RFSoC 2x2 demonstrations, education support, and SDR design notebooks (49:12)](https://youtu.be/73iypldwZ2I?t=2952)<br><ul><li>[Setting up the RFSoC 2x2 (54:49)](https://youtu.be/73iypldwZ2I?t=3289)</li><li>[Spectrum Analyzer Notebook demo (1:06:15)](https://youtu.be/73iypldwZ2I?t=3975)</li><li>[Frequency Planning (1:33:07)](https://youtu.be/73iypldwZ2I?t=5587)</li></ul> | [PDF](./pdf/isfpga_rxsoc_2x2_demos.pdf)          |
-| [Next steps; how to purchase, available resources (1:37:59)](https://youtu.be/73iypldwZ2I?t=5879) | [PDF](./pdf/isfpga_rfsoc_2x2_next_steps.pdf)     |
-
+| [RFSoC 2x2 demonstrations, education support, and SDR design notebooks (49:12)](https://youtu.be/73iypldwZ2I?t=2952) | [PDF](./pdf/isfpga_rxsoc_2x2_demos.pdf)          |
+| [Setting up the RFSoC 2x2 (54:49)](https://youtu.be/73iypldwZ2I?t=3289) |                                                  |
+| [Nyquist Zones (57:38)](https://youtu.be/73iypldwZ2I?t=3458) <br>RF ADC and RF DAC 1st and 2nd order Nyquist Zones |                                                  |
+| [Wireless Comms/SDR design educational Jupyter notebooks (1:00:18)](https://youtu.be/73iypldwZ2I?t=3618)<br>Available notebooks covering fundamental and advanced DSP concepts |                                                  |
+| [Spectrum Analyzer Notebook demo (1:06:15)](https://youtu.be/73iypldwZ2I?t=3975)<br>Jupyter Notebook Spectrum Analyzer running on the RFSoC 2x2 board |                                                  |
+| [Frequency Planning demo (1:33:07)](https://youtu.be/73iypldwZ2I?t=5587)<br>Jupyter Notebook frequency planner |                                                  |
+| [Next steps (1:37:59)](https://youtu.be/73iypldwZ2I?t=5879) <br>How to Purchase an RFSoC 2x2 and available resources | [PDF](./pdf/isfpga_rfsoc_2x2_next_steps.pdf)     |
