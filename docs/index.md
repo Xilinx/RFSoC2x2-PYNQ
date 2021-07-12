@@ -12,7 +12,7 @@ The [Xilinx University Program](https://www.xilinx.com/support/university/boards
 
 The kit features:
 
-* Affordable price of $1,899 available only to academic customers 
+* $2,149<sup>*</sup> available only to academic customers 
 * RFSoC 2x2 board with 2 RF DAC and 2 RF ADC channels
 * [PYNQ framework](http://www.pynq.io) with Jupyter Lab for exceptional ease-of-use 
 * Open-source resources including teaching materials, notebooks, and design examples  (see [Educational resources](./educational_resources.html))
@@ -21,6 +21,8 @@ The kit features:
 * Online [PYNQ community support forum](https://discuss.pynq.io/)
 
 For more details on the RFSoC 2x2 hardware, see the [Board Overview](overview.md) page.
+
+<sup>*</sup>12 July 2021: The price has been updated due to substantial increases in component costs which have been widespread across the industry. This has added significant cost to the RFSoC 2x2. The impact on the price has been minimized with support from Xilinx and other board partners.
 
 ## Getting started
 
