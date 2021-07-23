@@ -228,7 +228,7 @@ class SelfTestOverlay(BaseOverlay):
 
         dc_channel_flags = {}
         for i in range(0, 2):
-            dc_channel_flags['dc_ch_{}'.format(i)] = rfdc_results[i]
+            dc_channel_flags['RFSoC Data Converters_ch_{}'.format(i)] = rfdc_results[i]
         return dc_channel_flags
 
 
@@ -506,16 +506,16 @@ except:
 logprint('PMBUS rails: {}'.format(test_flags['pmbus_rails']))
 
 
-test_flags['dc_test'] = True
+test_flags['RFSoC Data Converters_test'] = True
 try:
     dc_ch_flags = test_overlay.test_sweep()
 except:
-    test_flags['dc_test'] = False
+    test_flags['RFSoC Data Converters_test'] = False
 else:
     test_flags.update(dc_ch_flags)
     for dc_ch in dc_ch_flags.values():
-        test_flags['dc_test'] = test_flags['dc_test'] and dc_ch
-logprint('DC tests: {}'.format(test_flags['dc_test']))
+        test_flags['RFSoC Data Converters_test'] = test_flags['RFSoC Data Converters_test'] and dc_ch
+logprint('RFSoC Data Converters tests: {}'.format(test_flags['RFSoC Data Converters_test']))
 
 
 test_flags['pmbus_test'] = True
@@ -534,7 +534,7 @@ if test_flags['pmbus_rails'] and test_flags['pmbus_test']:
     test_overlay.leds[2].on()
 
 
-if test_flags['config_rf'] and test_flags['dc_test']:
+if test_flags['config_rf'] and test_flags['RFSoC Data Converters_test']:
     test_overlay.leds[3].on()
 
 
