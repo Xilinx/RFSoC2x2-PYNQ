@@ -42,6 +42,3 @@ There are BALUNs between the SMA connectors and the Zynq RFSoC on the board, whi
 
 ![](./images/rfsoc2x2_block_diagram.png)
 
-
-
-

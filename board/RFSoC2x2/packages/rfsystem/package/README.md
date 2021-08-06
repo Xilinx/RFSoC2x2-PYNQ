@@ -7,13 +7,13 @@ has its own driver (`xrfdc`), which this design uses.
 The image below demonstrates the visualisation capabilities of the hierarchical
 radio block design.
 
-<img src="./time_domain_plot.png">
+<img class="responsive" src="./time_domain_plot.png">
 
 Integrating the hierarchical block into your own design is relatively
 straight forward. See the image below showing the `rfsystem` with input 
 and output ports.
 
-<img src="./rfsystem.PNG" height="300">
+<img class="responsive" src="./rfsystem.PNG" height="300">
   
 The `rfsystem` software package can be added through pip installation. 
 This will install the package to your system.
