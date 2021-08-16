@@ -14,7 +14,8 @@ The benefits of integrating direct RF sampling data converters were demonstrated
 
 ## Tutorial recording
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/73iypldwZ2I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<section style="text-align:center"><iframe class="you-container2" style="text-align:center; border: 0px; background:transparent" src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" frameborder="0" width="80%" height="auto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+	</iframe></section>
 
 ## Presentations (PDF) & links to video sections
 

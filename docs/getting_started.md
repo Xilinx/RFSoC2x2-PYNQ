@@ -89,4 +89,3 @@ You are now in the Jupyter Lab IDE and the PYNQ framework. Use the example noteb
 # Next steps
 
 Review the [overlays](./overlays.html) page for details on available overlays that can be used with your board. Overlays are prepacked PYNQ designs that you can use with your board. 
-
