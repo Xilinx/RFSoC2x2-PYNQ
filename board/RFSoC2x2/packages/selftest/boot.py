@@ -43,8 +43,7 @@ from rfsystem.spectrum_sweep import ToneGenerator
 from rfsystem.spectrum_sweep import FrequencySelector
 from rfsystem.spectrum_sweep import SpectrumProcessor
 
-
-__author__ = "David Northcote, Marius Siauciulis, Yun Rock Qu"
+__author__ = "David Northcote, Marius Siauciulis, Yun Rock Qu, Lewis Brown"
 __copyright__ = "Copyright 2021, Xilinx"
 __email__ = "pynq_support@xilinx.com"
 
@@ -196,11 +195,11 @@ class SelfTestOverlay(BaseOverlay):
         for rail, rail_sensors in RAIL_RANGES.items():
             for sensor in rail_sensors:
                 key = '{}_{}'.format(rail, sensor)
-                pmbus_flags[key] = True
+                pmbus_flags[key] = 'OK'
                 for m in self.pmbus_recorder.frame[key]:
                     if not rail_sensors[sensor][0] <= m <= \
                            rail_sensors[sensor][1]:
-                        pmbus_flags[key] = False
+                        pmbus_flags[key] = 'Error: Under Voltage'
         return pmbus_flags
 
     def test_sweep(self):
@@ -222,13 +221,24 @@ class SelfTestOverlay(BaseOverlay):
         for i in range(0, 2):
             array_results = self.sweep[i].results.get_values()
             fundamental_result = not all(array_results[0] - array_results[1])
+            if fundamental_result == True:
+                fundamental_result = 'Pass'
+            else:
+                fundamental_result = 'Fail'
             sfdr_result = all(array_results[2] > 40)
+            if sfdr_result == True:
+                sfdr_result = 'Pass'
+                logprint('Spectrum Sweep Pass: DAC -> ADC channel {}: SFDR is above the lower limit of 40dB'.format(i))
+            else:
+                sfdr_result = 'Fail'
+                logprint('Spectrum Sweep Error: DAC -> ADC channel {}: SFDR is below the lower limit of 40dB'.format(i))
+                logprint('** Did you connect the SMA cables to the correct DAC and ADC?**')
             channel_result = fundamental_result and sfdr_result
             rfdc_results.append(channel_result)
 
         dc_channel_flags = {}
         for i in range(0, 2):
-            dc_channel_flags['dc_ch_{}'.format(i)] = rfdc_results[i]
+            dc_channel_flags['RFSoC Data Converters_ch_{}'.format(i)] = rfdc_results[i]
         return dc_channel_flags
 
 
@@ -414,44 +424,44 @@ This section includes the basic tests for MAC, LEDs, I2C, and PMBUS.
 """
 mac = test_overlay.mac
 mac_group = 'FC:C2:3D'
-test_flags['mac_test'] = True
+test_flags['mac_test'] = 'Pass'
 try:
     assert mac[0:8] == mac_group
 except:
-    test_flags['mac_test'] = False
+    test_flags['mac_test'] = 'Fail'
 logprint('MAC: {}'.format(test_flags['mac_test']))
 logprint('MAC address: {}'.format(mac))
 
 
-test_flags['config_leds'] = True
+test_flags['config_leds'] = 'Pass'
 try:
     test_overlay.config_leds()
 except:
-    test_flags['config_leds'] = False
+    test_flags['config_leds'] = 'Fail'
 logprint('LED: {}'.format(test_flags['config_leds']))
 
 
-test_flags['init_i2c'] = True
+test_flags['init_i2c'] = 'Pass'
 try:
     test_overlay.init_i2c()
 except:
-    test_flags['init_i2c'] = False
+    test_flags['init_i2c'] = 'Fail'
 logprint('I2C: {}'.format(test_flags['init_i2c']))
 
 
-test_flags['config_syzygy'] = True
+test_flags['config_syzygy'] = 'Pass'
 try:
     test_overlay.set_syzygy_vio(1.2)
 except:
-    test_flags['config_syzygy'] = False
+    test_flags['config_syzygy'] = 'Fail'
 logprint('SYZYGY: {}'.format(test_flags['config_syzygy']))
 
 
-test_flags['config_pmbus'] = True
+test_flags['config_pmbus'] = 'Pass'
 try:
     test_overlay.config_pmbus()
 except:
-    test_flags['config_pmbus'] = False
+    test_flags['config_pmbus'] = 'Fail'
 logprint('Configure PMBUS: {}'.format(test_flags['config_pmbus']))
 
 
@@ -467,12 +477,13 @@ In this section we will reconfigure the RF clock chips, namely, LMK and LMX
 chips.
 
 """
-test_flags['set_ref_clks'] = True
+test_flags['set_ref_clks'] = 'Pass'
 try:
-    test_overlay.init_rf_clks()
-except:
-    test_flags['set_ref_clks'] = False
-logprint('Set RF clocks: {}'.format(test_flags['set_ref_clks']))
+    test_overlay.init_rf_clks()    
+except RuntimeError as e:
+    test_flags['set_ref_clks'] = 'Fail'
+    logprint('Set RF Data Converter clocks failed: {}'.format(str(e)))
+logprint('Set RF Data Converter clocks: {}'.format(test_flags['set_ref_clks']))
 
 
 if test_flags['set_ref_clks']:
@@ -485,44 +496,47 @@ We will configure the RF components, including ADC, DAC. After that, we
 sweep the frequency domain while checking power.
 
 """
-test_flags['config_rf'] = True
+test_flags['config_rf'] = 'Pass'
 try:
     test_overlay.config_tile_clock(btype='dac', tile=0)
     test_overlay.config_tile_clock(btype='dac', tile=1)
     test_overlay.config_tile_clock(btype='adc', tile=0)
     test_overlay.config_tile_clock(btype='adc', tile=2)
     test_overlay.config_sweep()
-except:
-    test_flags['config_rf'] = False
+except RuntimeError as e:
+    test_flags['config_rf'] = 'Fail'
+    logprint('Configure ADC/DAC failed: {}'.format(str(e)))
 logprint('Configure ADC/DAC: {}'.format(test_flags['config_rf']))
 
 
-test_flags['pmbus_rails'] = True
+test_flags['pmbus_rails'] = 'Pass'
 try:
     rails = map(str, test_overlay.pmbus_rails.values())
     logprint('\n' + '\n'.join(rails))
 except:
-    test_flags['pmbus_rails'] = False
+    test_flags['pmbus_rails'] = 'Fail'
 logprint('PMBUS rails: {}'.format(test_flags['pmbus_rails']))
 
 
-test_flags['dc_test'] = True
+test_flags['RFSoC Data Converters_test'] = 'Pass'
 try:
     dc_ch_flags = test_overlay.test_sweep()
-except:
-    test_flags['dc_test'] = False
+except Exception as e:
+    test_flags['RFSoC Data Converters_test'] = 'Fail'
+    logprint('RFSoC Data Converter test failed: {}'.format(str(e)))
 else:
     test_flags.update(dc_ch_flags)
     for dc_ch in dc_ch_flags.values():
-        test_flags['dc_test'] = test_flags['dc_test'] and dc_ch
-logprint('DC tests: {}'.format(test_flags['dc_test']))
+        if test_flags['RFSoC Data Converters_test'] == 'Pass':
+            test_flags['RFSoC Data Converters_test'] = test_flags['RFSoC Data Converters_test'] and dc_ch
+logprint('RFSoC Data Converters tests: {}'.format(test_flags['RFSoC Data Converters_test']))
 
 
-test_flags['pmbus_test'] = True
+test_flags['pmbus_test'] = 'Pass'
 try:
     pmbus_ch_flags = test_overlay.test_power_rail()
 except:
-    test_flags['pmbus_test'] = False
+    test_flags['pmbus_test'] = 'Fail'
 else:
     test_flags.update(pmbus_ch_flags)
     for pmbus_ch in pmbus_ch_flags.values():
@@ -534,7 +548,7 @@ if test_flags['pmbus_rails'] and test_flags['pmbus_test']:
     test_overlay.leds[2].on()
 
 
-if test_flags['config_rf'] and test_flags['dc_test']:
+if test_flags['config_rf'] and test_flags['RFSoC Data Converters_test']:
     test_overlay.leds[3].on()
 
 
@@ -566,16 +580,23 @@ Light on green LEDs if all tests have passed. Otherwise light red.
 self_test_passed = True
 for flag, flag_val in test_flags.items():
     logprint('{}: {}'.format(flag, flag_val))
-    self_test_passed = self_test_passed and flag_val
+    if flag_val == 'Pass' or flag_val == 'OK':
+        passState = True
+    else:
+        passState = False
+    self_test_passed = self_test_passed and passState
 
+logprint('*******************************************')
 if self_test_passed:
     test_overlay.rgbleds[0].on(2)
     test_overlay.rgbleds[1].on(2)
     logprint('Test PASS.')
+    logprint('*******************************************')
 else:
     test_overlay.rgbleds[0].on(4)
     test_overlay.rgbleds[1].on(4)
     logprint('Test FAIL.')
+logprint('*******************************************')
 
 end_time = time()
 logprint('Test took {0:.2f}s'.format(end_time - start_time))
