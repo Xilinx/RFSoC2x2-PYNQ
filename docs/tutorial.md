@@ -14,8 +14,60 @@ The benefits of integrating direct RF sampling data converters were demonstrated
 
 ## Tutorial recording
 
-<section style="text-align:center"><iframe class="you-container2" style="text-align:center; border: 0px; background:transparent" src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" frameborder="0" width="80%" height="auto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-	</iframe></section>
+<section>
+<table style="border: 0px; background:transparent" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/tNuvpKsuH-4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/afC_eLvFAFQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+ </tr> 
+ <tr>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/B0-s7gORKrA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/gsKRW_U_evg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+ </tr>
+     <tr>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/T9mn71auSNA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/y2VjS4A8cXY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+ </tr>
+     <tr>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/PqPdfnbNxyY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/tSfsRVqALIw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+    </tr>
+        <tr>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/WV-sX-eZAt8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/AXWiOQ4IKN4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+ </tr>
+     <tr>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/TeplpLoGDwM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+      <td style="border: 0px; background:transparent" height="300px">
+        <iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      </td>
+ </tr>
+</tbody></table>
+</section>
+
 
 ## Presentations (PDF) & links to video sections
 
