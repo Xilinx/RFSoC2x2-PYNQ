@@ -116,7 +116,7 @@ In this tutorial we present a single board, fully integrated Software Defined Ra
       </td>
     </tr> 
 </tbody></table>
-
+</section>
 
 ## RFSoC 2x2 tutorial - ISFGPA Conference February 2021
 
@@ -124,8 +124,6 @@ Speakers: Patrick Lysaght (Xilinx Research Labs), Prof. Robert W. Stewart (Unive
 The benefits of integrating direct RF sampling data converters were demonstrated by introducing a novel, open-source spectrum analyzer built using the new board. This RFSoC design exploits advanced signal processing techniques, including higher-order Nyquist zones, to demonstrate performance that has only previously been achieved on very high-end instrumentation. Using the spectrum analyzer example, we will also demonstrate new approaches to the rapid prototyping of graphical user interfaces for research demonstrators.
 
 <div class="you-container1"><iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe></div>
-
-</section>
 
 
 ## Presentations (PDF) & links to video sections
