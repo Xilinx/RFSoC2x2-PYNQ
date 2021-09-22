@@ -6,14 +6,22 @@ layout: default
 
 Two tutorials based on the RFSoC were held in 2021, at the ISFPGA and the EUSIPCO conferences. Both tutorials are available on demand below.
 
-## A Software Defined Radio Teaching and Research Platform using the RFSoC 2×2 Board **EUSIPCO August 2021**
+## A Software Defined Radio Teaching and Research Platform using the RFSoC 2×2 Board
+**EUSIPCO August 2021**
+Speakers: Patrick Lysaght (Xilinx Research Labs), Prof. Robert W. Stewart (University of Strathclyde), Dr Louise Crockett (University of Strathclyde), David Northcote (University of Strathclyde)
+In this tutorial we present a single board, fully integrated Software Defined Radio platform for teaching, research and design.  Working live on the tutorial we will feature the Xilinx University Program (XUP) RFSoC 2×2 Board which features 4GHz sampling rate RF ADCs and RF DACs, and an ARM based processing system and FPGA programmable logic facility.  The RFSoC 2×2 Board uses the PYNQ open-source framework and an easy to use browser-based system interface exploits features of Linux, Python and Jupyter notebooks.  In the tutorial attendees will learn how to take direct off the air signals for TV, radio, mobile, wireless, and so on, and down convert, channelize and then investigate the received signal features, including spectral analysis, modulation schemes and other features.  A key feature of the RFSoC DACs and ADCs is their ability to receive and transmit in higher order Nyquist bands, and the tutorial will therefore feature architectures to directly receive and transmit in the 2nd order Nyquist bands (2GHz to 4GHz) on the RFSoC 2×2.
 
 
 ## RFSoC 2x2 tutorials
 
 <section>
 <table style="border: 0px; background:transparent" width="100%" border="0">
-  <tbody> 
+  <tbody>
+    <tr>
+      <td style="colspan=2">
+        <strong>ISFGPA Conference February 2021</strong>
+      </td>
+    </tr> 
     <tr>
       <td class="td1-gallery" style="border: 0px; background:transparent">
         <iframe src="https://www.youtube.com/embed/tNuvpKsuH-4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
