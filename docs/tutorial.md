@@ -18,7 +18,7 @@ In this tutorial we present a single board, fully integrated Software Defined Ra
   <tbody>
     <tr>
       <td style="border: 0px; background:transparent; text-align:center" colspan= "2">
-        <strong>ISFGPA Conference August 2021</strong>
+        <strong>EUSIPCO Conference August 2021</strong>
       </td>
     </tr> 
     <tr>
