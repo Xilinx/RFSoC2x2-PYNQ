@@ -105,16 +105,14 @@ In this tutorial we present a single board, fully integrated Software Defined Ra
       <td class="td1-gallery" style="border: 0px; background:transparent">
         <iframe src="https://www.youtube.com/embed/TeplpLoGDwM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td class="td1-gallery" style="border: 0px; background:transparent">
-        <iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+      <td>
       </td>
     </tr>
     <tr>
       <td class="td2-gallery" style="border: 0px; background:transparent">
         <strong>Section 11:</strong> Wrap-up and call to participate
       </td>
-      <td class="td2-gallery" style="border: 0px; background:transparent">
-        <strong>Section 12:</strong> RFSoC-PYNQ Framework
+      <td>
       </td>
     </tr> 
 </tbody></table>
