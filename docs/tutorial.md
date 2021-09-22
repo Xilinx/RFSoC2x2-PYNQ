@@ -4,15 +4,12 @@ layout: default
 
 # RFSoC 2x2 ISFPGA tutorial
 
-The RFSoC 2x2 tutorial (*Low-Cost Teaching and Research Platform Based on Xilinx RFSoC Technology and the PYNQ Framework*) was held at the ISFGPA Conference in February 2021. 
+Two tutorials based on the RFSoC were held in 2021, at the ISFPGA and the EUSIPCO conferences. Both tutorials are available on demand below.
 
-Speakers: Patrick Lysaght (Xilinx Research Labs), Prof. Robert W. Stewart (University of Strathclyde), David Brubaker (Xilinx Zynq UltraScale+ RFSoC product manager)
+## A Software Defined Radio Teaching and Research Platform using the RFSoC 2×2 Board **EUSIPCO August 2021**
 
-The tutorial covered an introduction to the RFSoC 2x2 platform and the PYNQ open-source framework. PYNQ provides a highly intuitive user system interface incorporating Linux, Python and Jupyter notebooks. It also comes with a suite of open-source teaching resources including videos, notebooks and design examples.
 
-The benefits of integrating direct RF sampling data converters were demonstrated by introducing a novel, open-source spectrum analyzer built using the new board. This RFSoC design exploits advanced signal processing techniques, including higher-order Nyquist zones, to demonstrate performance that has only previously been achieved on very high-end instrumentation. Using the spectrum analyzer example, we will also demonstrate new approaches to the rapid prototyping of graphical user interfaces for research demonstrators.
-
-## RFSoC 2x2 IFSPGA tutorials
+## RFSoC 2x2 tutorials
 
 <section>
 <table style="border: 0px; background:transparent" width="100%" border="0">
