@@ -118,9 +118,9 @@ In this tutorial we present a single board, fully integrated Software Defined Ra
 </tbody></table>
 
 
-      <td class="td1-gallery" style="border: 0px; background:transparent">
-        <iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
-      </td>
+
+<iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="auto" frameborder="0"></iframe>
+
 </section>
 
 
