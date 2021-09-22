@@ -12,7 +12,7 @@ The tutorial covered an introduction to the RFSoC 2x2 platform and the PYNQ open
 
 The benefits of integrating direct RF sampling data converters were demonstrated by introducing a novel, open-source spectrum analyzer built using the new board. This RFSoC design exploits advanced signal processing techniques, including higher-order Nyquist zones, to demonstrate performance that has only previously been achieved on very high-end instrumentation. Using the spectrum analyzer example, we will also demonstrate new approaches to the rapid prototyping of graphical user interfaces for research demonstrators.
 
-## Tutorial recording
+## RFSoC 2x2 IFSPGA tutorials
 
 <section>
 <table style="border: 0px; background:transparent" width="100%" border="0">
@@ -24,24 +24,32 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/afC_eLvFAFQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
- </tr> 
- <tr>
+    </tr>
+    <tr>
+      <td>
+        <strong>Section 1:</strong> RFSoC Overview
+      </td>
+      <td>
+        <strong>Section 2:</strong> RFSoC-PYNQ Framework
+      </td>
+    </tr> 
+    <tr>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/B0-s7gORKrA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/gsKRW_U_evg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
- </tr>
-     <tr>
+    </tr>
+    <tr>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/T9mn71auSNA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/y2VjS4A8cXY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
- </tr>
-     <tr>
+    </tr>
+    <tr>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/PqPdfnbNxyY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
@@ -49,22 +57,22 @@ The benefits of integrating direct RF sampling data converters were demonstrated
         <iframe src="https://www.youtube.com/embed/tSfsRVqALIw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
-        <tr>
+    <tr>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/WV-sX-eZAt8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/AXWiOQ4IKN4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
- </tr>
-     <tr>
+    </tr>
+    <tr>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/TeplpLoGDwM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
- </tr>
+    </tr>
 </tbody></table>
 </section>
 
