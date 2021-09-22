@@ -26,7 +26,7 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       </td>
     </tr>
     <tr>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 1:</strong> RFSoC Overview
       </td>
       <td style="border: 0px; background:transparent">
