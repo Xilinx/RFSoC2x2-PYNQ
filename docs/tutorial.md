@@ -16,15 +16,7 @@ The benefits of integrating direct RF sampling data converters were demonstrated
 
 <section>
 <table style="border: 0px; background:transparent" width="100%" border="0">
-  <tbody>
-    <tr>
-      <td style="border: 0px; background:transparent">
-        <strong>Section 1:</strong> RFSoC Overview
-      </td>
-      <td style="border: 0px; background:transparent">
-        <strong>Section 2:</strong> RFSoC-PYNQ Framework
-      </td>
-    </tr> 
+  <tbody> 
     <tr>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/tNuvpKsuH-4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
@@ -35,10 +27,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
     </tr>
     <tr>
       <td style="border: 0px; background:transparent">
-        <strong>Section 3:</strong> SDR on RFSoC
+        <strong>Section 1:</strong> RFSoC Overview
       </td>
       <td style="border: 0px; background:transparent">
-        <strong>Section 4:</strong> Demo: First steps with RFSoC
+        <strong>Section 2:</strong> RFSoC-PYNQ Framework
       </td>
     </tr> 
     <tr>
@@ -51,10 +43,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
     </tr>
     <tr>
       <td style="border: 0px; background:transparent">
-        <strong>Section 5:</strong> "New DSP" for RFSoC
+        <strong>Section 3:</strong> SDR on RFSoC
       </td>
       <td style="border: 0px; background:transparent">
-        <strong>Section 6:</strong> RF ADCs, DACs, DDCs & DUCs
+        <strong>Section 4:</strong> Demo: First steps with RFSoC
       </td>
     </tr> 
     <tr>
@@ -67,10 +59,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
     </tr>
     <tr>
       <td style="border: 0px; background:transparent">
-        <strong>Section 7:</strong> Spectrum Analyzer Overview
+        <strong>Section 5:</strong> "New DSP" for RFSoC
       </td>
       <td style="border: 0px; background:transparent">
-        <strong>Section 8:</strong> Demo: Spectrum Analyzer
+        <strong>Section 6:</strong> RF ADCs, DACs, DDCs & DUCs
       </td>
     </tr> 
     <tr>
@@ -83,10 +75,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
     </tr>
     <tr>
       <td style="border: 0px; background:transparent">
-        <strong>Section 9:</strong> Frequency Planning & Examples
+        <strong>Section 7:</strong> Spectrum Analyzer Overview
       </td>
       <td style="border: 0px; background:transparent">
-        <strong>Section 10:</strong> Communications Design Example
+        <strong>Section 8:</strong> Demo: Spectrum Analyzer
       </td>
     </tr> 
     <tr>
@@ -99,12 +91,12 @@ The benefits of integrating direct RF sampling data converters were demonstrated
     </tr>
     <tr>
       <td style="border: 0px; background:transparent">
-        <strong>Section 11:</strong> Wrap-up and call to participate
+        <strong>Section 9:</strong> Frequency Planning & Examples
       </td>
       <td style="border: 0px; background:transparent">
-        <strong>Section 12:</strong> RFSoC-PYNQ Framework
+        <strong>Section 10:</strong> Communications Design Example
       </td>
-    </tr> 
+    </tr>
     <tr>
       <td style="border: 0px; background:transparent" height="300px">
         <iframe src="https://www.youtube.com/embed/TeplpLoGDwM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
@@ -113,6 +105,14 @@ The benefits of integrating direct RF sampling data converters were demonstrated
         <iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
+    <tr>
+      <td style="border: 0px; background:transparent">
+        <strong>Section 11:</strong> Wrap-up and call to participate
+      </td>
+      <td style="border: 0px; background:transparent">
+        <strong>Section 12:</strong> RFSoC-PYNQ Framework
+      </td>
+    </tr> 
 </tbody></table>
 </section>
 
