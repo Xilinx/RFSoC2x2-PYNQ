@@ -18,10 +18,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
 <table style="border: 0px; background:transparent" width="100%" border="0">
   <tbody> 
     <tr>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td-gallery">
         <iframe src="https://www.youtube.com/embed/tNuvpKsuH-4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td-gallery">
         <iframe src="https://www.youtube.com/embed/afC_eLvFAFQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
