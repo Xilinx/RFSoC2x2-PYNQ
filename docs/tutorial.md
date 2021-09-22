@@ -119,7 +119,7 @@ In this tutorial we present a single board, fully integrated Software Defined Ra
 
 
 
-<iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="auto" frameborder="0"></iframe>
+<div class="you-container1"><iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe></div>
 
 </section>
 
