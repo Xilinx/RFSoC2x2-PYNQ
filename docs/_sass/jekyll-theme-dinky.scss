@@ -525,14 +525,22 @@ screen and (max-width: 1200px) {
     .buttons-github {
         display: none;
     }
-    .td-gallery{
+    .td1-gallery{
         height: 200px;
-        width: 50%;
         background-color: transparent;
         background: transparent;
         text-align: center;
         border: 0px;
         padding-bottom: 5px;
+        width: 50%;
+    }
+    .td2-gallery{
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
     }
 }
 
@@ -595,6 +603,23 @@ screen and (max-width: 720px) {
     .buttons-github {
         display: none;
     }
+    .td1-gallery{
+        height: 150px;
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
+    .td2-gallery{
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
 }
 
 @media print,
@@ -644,6 +669,23 @@ screen and (max-width: 480px) {
     .sometext,
     .buttons-github {
         display: none;
+    }
+    .td1-gallery{
+        height: 100px;
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
+    .td2-gallery{
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
     }
 }
 
