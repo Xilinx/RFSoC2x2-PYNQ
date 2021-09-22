@@ -18,98 +18,98 @@ The benefits of integrating direct RF sampling data converters were demonstrated
 <table style="border: 0px; background:transparent" width="100%" border="0">
   <tbody> 
     <tr>
-      <td class="td-gallery">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/tNuvpKsuH-4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td class="td-gallery">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/afC_eLvFAFQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
     <tr>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 1:</strong> RFSoC Overview
       </td>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 2:</strong> RFSoC-PYNQ Framework
       </td>
     </tr> 
     <tr>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/B0-s7gORKrA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/gsKRW_U_evg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
     <tr>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 3:</strong> SDR on RFSoC
       </td>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 4:</strong> Demo: First steps with RFSoC
       </td>
     </tr> 
     <tr>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/T9mn71auSNA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/y2VjS4A8cXY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
     <tr>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 5:</strong> "New DSP" for RFSoC
       </td>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 6:</strong> RF ADCs, DACs, DDCs & DUCs
       </td>
     </tr> 
     <tr>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/PqPdfnbNxyY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/tSfsRVqALIw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
     <tr>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 7:</strong> Spectrum Analyzer Overview
       </td>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 8:</strong> Demo: Spectrum Analyzer
       </td>
     </tr> 
     <tr>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/WV-sX-eZAt8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/AXWiOQ4IKN4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
     <tr>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 9:</strong> Frequency Planning & Examples
       </td>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 10:</strong> Communications Design Example
       </td>
     </tr>
     <tr>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/TeplpLoGDwM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
-      <td style="border: 0px; background:transparent" height="300px">
+      <td class="td1-gallery">
         <iframe src="https://www.youtube.com/embed/73iypldwZ2I" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
       </td>
     </tr>
     <tr>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 11:</strong> Wrap-up and call to participate
       </td>
-      <td class="td-gallery">
+      <td class="td2-gallery">
         <strong>Section 12:</strong> RFSoC-PYNQ Framework
       </td>
     </tr> 
