@@ -210,7 +210,8 @@ screen and (min-width: 1201px) {
         background: transparent;
         text-align: center;
         border: 0px;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
+        width: 50%;
     }
 }
 
@@ -515,6 +516,15 @@ screen and (max-width: 1200px) {
     .sometext,
     .buttons-github {
         display: none;
+    }
+    .td-gallery{
+        height: 200px;
+        width: 50%;
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
     }
 }
 
