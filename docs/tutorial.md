@@ -29,7 +29,7 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 1:</strong> RFSoC Overview
       </td>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 2:</strong> RFSoC-PYNQ Framework
       </td>
     </tr> 
@@ -42,10 +42,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       </td>
     </tr>
     <tr>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 3:</strong> SDR on RFSoC
       </td>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 4:</strong> Demo: First steps with RFSoC
       </td>
     </tr> 
@@ -58,10 +58,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       </td>
     </tr>
     <tr>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 5:</strong> "New DSP" for RFSoC
       </td>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 6:</strong> RF ADCs, DACs, DDCs & DUCs
       </td>
     </tr> 
@@ -74,10 +74,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       </td>
     </tr>
     <tr>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 7:</strong> Spectrum Analyzer Overview
       </td>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 8:</strong> Demo: Spectrum Analyzer
       </td>
     </tr> 
@@ -90,10 +90,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       </td>
     </tr>
     <tr>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 9:</strong> Frequency Planning & Examples
       </td>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 10:</strong> Communications Design Example
       </td>
     </tr>
@@ -106,10 +106,10 @@ The benefits of integrating direct RF sampling data converters were demonstrated
       </td>
     </tr>
     <tr>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 11:</strong> Wrap-up and call to participate
       </td>
-      <td style="border: 0px; background:transparent">
+      <td style="border: 0px; background:transparent; text-align: center">
         <strong>Section 12:</strong> RFSoC-PYNQ Framework
       </td>
     </tr> 
