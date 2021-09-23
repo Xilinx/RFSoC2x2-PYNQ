@@ -193,6 +193,15 @@ screen and (min-width: 1201px) {
         padding-top: 50px;
         width: 70%;
     }
+    .you-container3 {
+        position: relative;
+        padding-bottom: 0px;
+        height: 400px;
+        overflow: hidden;
+        padding-top: 0px;
+        width: 70%;
+        padding-top: 15px;
+    }
     .otherheading,
     .icon,
     input {
@@ -203,6 +212,24 @@ screen and (min-width: 1201px) {
         float: right;
         padding-bottom: 50px;
         text-align: center;
+    }
+    .td1-gallery{
+        height: 300px;
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
+    .td2-gallery{
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+        padding-bottom: 15px;
     }
 }
 
@@ -504,9 +531,34 @@ screen and (max-width: 1200px) {
         overflow: hidden;
         padding-top: 50px;
     }
+    .you-container1 {
+        position: relative;
+        padding-bottom: 0px;
+        height: 250px;
+        overflow: hidden;
+        padding-top: 15px;
+    }
     .sometext,
     .buttons-github {
         display: none;
+    }
+    .td1-gallery{
+        height: 200px;
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
+    .td2-gallery{
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+        padding-bottom: 15px;
     }
 }
 
@@ -565,9 +617,34 @@ screen and (max-width: 720px) {
         overflow: hidden;
         padding-top: 50px;
     }
+    .you-container1 {
+        position: relative;
+        padding-bottom: 0px;
+        height: 250px;
+        overflow: hidden;
+        padding-top: 15px;
+    }
     .sometext,
     .buttons-github {
         display: none;
+    }
+    .td1-gallery{
+        height: 150px;
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
+    .td2-gallery{
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+        padding-bottom: 10px;
     }
 }
 
@@ -609,6 +686,13 @@ screen and (max-width: 480px) {
         overflow: hidden;
         padding-top: 50px;
     }
+    .you-container3 {
+        position: relative;
+        padding-bottom: 0px;
+        height: 250px;
+        overflow: hidden;
+        padding-top: 10px;
+    }
     .section1 {
         width: 1000px;
         float: right;
@@ -618,6 +702,24 @@ screen and (max-width: 480px) {
     .sometext,
     .buttons-github {
         display: none;
+    }
+    .td1-gallery{
+        height: 75px;
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
+    .td2-gallery{
+        background-color: transparent;
+        background: transparent;
+        text-align: center;
+        border: 0px;
+        padding-bottom: 5px;
+        width: 50%;
+        padding-bottom: 10px;
     }
 }
 
@@ -643,6 +745,13 @@ screen and (max-width: 480px) {
         height: 250px;
         overflow: hidden;
         padding-top: 50px;
+    }
+    .you-container3 {
+        position: relative;
+        padding-bottom: 0px;
+        height: 250px;
+        overflow: hidden;
+        padding-top: 10px;
     }
     .section1 {
         width: 1000px;
