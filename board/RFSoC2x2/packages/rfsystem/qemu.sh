@@ -12,7 +12,7 @@ export HOME=/root
 export BOARD=${PYNQ_BOARD}
 
 cd /root/rfsystem_build
-python3 -m pip install rfsystem
+python3 -m pip install .
 
 cd /root
 rm -rf rfsystem_build
