@@ -15,7 +15,7 @@ TAG_VERSION=v0.2.0
 
 cd /root
 if [ ! -d "/root/rfsoc_sam_build" ]; then
-	git clone https://github.com/schelleg/rfsoc_sam rfsoc_sam_build
+	git clone https://github.com/strath-sdr/rfsoc_sam rfsoc_sam_build
 fi
 cd /root/rfsoc_sam_build
 python3 -m pip install .
