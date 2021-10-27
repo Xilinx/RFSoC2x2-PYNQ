@@ -1,8 +1,8 @@
 diff --git a/board/xilinx/common/board.c b/board/xilinx/common/board.c
-index 771b749..768f072 100644
+index 771b749..64b58b5 100644
 --- a/board/xilinx/common/board.c
 +++ b/board/xilinx/common/board.c
-@@ -20,24 +20,16 @@ int zynq_board_read_rom_ethaddr(unsigned char *ethaddr)
+@@ -20,18 +20,16 @@ int zynq_board_read_rom_ethaddr(unsigned char *ethaddr)
  {
  	int ret = -EINVAL;
  	struct udevice *dev;
@@ -11,19 +11,13 @@ index 771b749..768f072 100644
 -	eeprom = ofnode_get_chosen_node("xlnx,eeprom");
 -	if (!ofnode_valid(eeprom))
 -		return -ENODEV;
- 
+-
 -	debug("%s: Path to EEPROM %s\n", __func__,
 -	      ofnode_read_chosen_string("xlnx,eeprom"));
--
+ 
 -	ret = uclass_get_device_by_ofnode(UCLASS_I2C_EEPROM, eeprom, &dev);
 -	if (ret)
 -		return ret;
--
--	ret = dm_i2c_read(dev, CONFIG_ZYNQ_GEM_I2C_MAC_OFFSET, ethaddr, 6);
--	if (ret)
--		debug("%s: I2C EEPROM MAC address read failed\n", __func__);
--	else
--		debug("%s: I2C EEPROM MAC %pM\n", __func__, ethaddr);
 +	/* 
 +	 * Reading of extended memory is not supported by the driver
 +	 * Use customized code to read out MAC address
@@ -34,5 +28,5 @@ index 771b749..768f072 100644
 + 		return ret;
 +	}
  
- 	return ret;
- }
+ 	ret = dm_i2c_read(dev, CONFIG_ZYNQ_GEM_I2C_MAC_OFFSET, ethaddr, 6);
+ 	if (ret)
