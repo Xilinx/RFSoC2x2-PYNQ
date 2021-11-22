@@ -334,16 +334,37 @@
 			#size-cells = <0>;
 			reg = <4>;
 		};
-		i2c@5 {
-			#address-cells = <1>;
-			#size-cells = <0>;
-			reg = <5>;
-			sc18is602@2a { // SC18IS602 (U12)
-				compatible = "nxp,sc18is602";
-				reg = <0x2a>;
-				/* 4 gpios for CS not handled by driver */
-			};
+		 i2c@5 {
+			#address-cells = <0x1>;
+			#size-cells = <0x0>;
+			reg = <0x5>;
+
+			sc18is602@2a {
+					compatible = "nxp,sc18is602b";
+					reg = <0x2a>;
+					#address-cells = <0x1>;
+					#size-cells = <0x0>;
+					lmxadc@0 {
+							compatible = "ti,lmx2594";
+							reg = <0x0>;
+							spi-max-frequency = <400000>;
+							num_bytes = <3>;
+							};
+					lmxdac@1 {
+							compatible = "ti,lmx2594";
+							reg = <0x1>;
+							spi-max-frequency = <400000>;
+							num_bytes = <3>;
+							};
+					lmk@3 {
+							compatible = "ti,lmk04832";
+							reg = <0x3>;
+							spi-max-frequency = <400000>;
+							num_bytes = <3>;
+							};
+					};
 		};
+
 		i2c@6 { // USB5742 (U26) usb hub
 			#address-cells = <1>;
 			#size-cells = <0>;

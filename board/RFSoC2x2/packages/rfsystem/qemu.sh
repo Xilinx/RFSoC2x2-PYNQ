@@ -6,11 +6,13 @@ set -x
 set -e
 
 . /etc/environment
+for f in /etc/profile.d/*.sh; do source $f; done
+
 export HOME=/root
 export BOARD=${PYNQ_BOARD}
 
 cd /root/rfsystem_build
-pip3 install .
+python3 -m pip install .
 
 cd /root
 rm -rf rfsystem_build
