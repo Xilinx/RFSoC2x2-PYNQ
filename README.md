@@ -1,6 +1,6 @@
 # RFSoC 2x2 Kit
 
-View the *RFSoC 2x2 Kit GitHub page* for this repository on [www.rfsoc-pynq.io](http://www.rfsoc-pynq.io/).
+View the *RFSoC 2x2 Kit GitHub page* for this repository on [https://xilinx.github.io/RFSoC2x2-PYNQ/](https://xilinx.github.io/RFSoC2x2-PYNQ/).
 
 This repository is used to host the *GitHub Documentation Page* for the
 RFSoC2x2 kit. It includes the sources for the documentation, and board
