@@ -8,7 +8,7 @@ Xilinx’s Radio Frequency System-on-Chip ([RFSoC](https://www.xilinx.com/produc
 
 The [Xilinx University Program](https://www.xilinx.com/support/university/xup-boards/RFSoC2x2.html) is offering the **RFSoC 2x2 kit** exclusively for academic customers. 
 
-<img src="./images/01_rfsoc_2x2_t.png" style="zoom:75%;" />
+<img alt="RFSoC 2x2" src="./images/01_rfsoc_2x2_t.png" style="zoom:75%;" />
 
 The kit features:
 
