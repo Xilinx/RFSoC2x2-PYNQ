@@ -1,3 +1,11 @@
+# 🚫 This repository has been archived
+
+The latest RFSoC2x2 board files have moved to [https://github.com/Xilinx/RFSoC-PYNQ](https://github.com/Xilinx/RFSoC-PYNQ).
+
+SD card images for the RFSoC2x2 can be found at [http://www.pynq.io/board](http://www.pynq.io/board).
+
+---------------
+
 # RFSoC 2x2 Kit
 
 View the *RFSoC 2x2 Kit GitHub page* for this repository on [https://xilinx.github.io/RFSoC2x2-PYNQ/](https://xilinx.github.io/RFSoC2x2-PYNQ/).
